@@ -6,7 +6,6 @@
    >
       <div
          ref="preloaderTextContainer"
-         id="text-container"
          class="invisible flex flex-row gap-5 overflow-hidden text-white"
       >
          <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl">The future</h1>
