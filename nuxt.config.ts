@@ -6,6 +6,15 @@ export default defineNuxtConfig({
   tailwindcss: {
     configPath: 'tailwind.config',
   },
+  googleFonts: {
+    inject: true,
+    outputDir: 'assets',
+    fontsDir: 'fonts',
+    families: {
+      'Inter': [400, 500, 600, 700],
+      'Kumbh Sans': [400, 500]
+    }
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontaine',
@@ -13,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
+    '@nuxtjs/google-fonts',
   ],
 
 })

@@ -1,6 +1,6 @@
 <template>
    <div>
-      <ThePreloader2 />
+      <SharedAnimationsThePreloader2 />
 
       <slot />
    </div>

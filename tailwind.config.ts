@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
 
 /** @type {import('tailwindcss').Config} */
 export default <Partial<Config>> {
@@ -15,7 +17,22 @@ export default <Partial<Config>> {
     "~/app/spa-loading-template.html"
   ],
   theme: {
-    extend: {},
+    screens: {
+      xl: '1920px',
+      lg: '1440px',
+    },
+    extend: {
+      fontFamily: {
+        "inter": ["Inter", 'Inter fallback', ...fontFamily.sans],
+        'kumbh-sans': ['Kumbh Sans', 'Kumbh Sans fallback', ...fontFamily.sans]
+      },
+      padding: {
+        '40.5': '10.125rem',
+      },
+      backgroundColor: {
+        "primary": '#141414',
+      }
+    },
   },
   plugins: [],
 }

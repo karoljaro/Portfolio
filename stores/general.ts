@@ -2,7 +2,10 @@ import { defineStore } from 'pinia'
 
 export const useGeneralStore = defineStore({
   id: 'generalStore',
-  state: () => ({ isPreloaderVisible: true, }),
+  state: () => ({
+    isPreloaderVisible: true,
+    isMobile: false,
+  }),
   actions: {
     updateIsPreloaderVisible(value: boolean) {
       this.isPreloaderVisible = value;
@@ -10,6 +13,6 @@ export const useGeneralStore = defineStore({
   },
   persist: {
     storage: sessionStorage,
-    pick: ['isPreloaderVisible']
+    pick: ['isPreloaderVisible', 'isMobile']
   },
 })

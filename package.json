@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@nuxtjs/fontaine": "^0.4.4",
+    "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@pinia/nuxt": "^0.7.0",
     "@vueuse/nuxt": "^11.2.0",

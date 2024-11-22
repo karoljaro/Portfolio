@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+   <SharedSectionWrapper>
+      <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
+      <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
+      <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
+   </SharedSectionWrapper>
+
+   <br>
 </template>
 
-<script lang="ts" setup>
-
-</script>
-
-<style>
-
-</style>
