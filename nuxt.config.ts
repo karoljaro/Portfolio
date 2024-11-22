@@ -11,10 +11,11 @@ export default defineNuxtConfig({
     outputDir: 'assets',
     fontsDir: 'fonts',
     families: {
-      'Inter': [400, 500, 600, 700],
-      'Kumbh Sans': [400, 500]
+      "Fira Code": [400, 500, 600],
+      "Open Sans": [300, 400, 500],
     }
   },
+  
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontaine',
@@ -24,5 +25,15 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/google-fonts',
   ],
-
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'pl',
+      },
+      meta: [
+        { name: 'description', content: 'Personal Portfolio' }
+      ],
+      title: "Personal Portfolio",
+    }
+  }
 })

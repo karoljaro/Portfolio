@@ -1,10 +1,6 @@
 <template>
-   <SharedSectionWrapper>
-      <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
-      <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
-      <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
-   </SharedSectionWrapper>
-
-   <br>
+   <SharedContainerWrapper>
+      <SharedHeaderMoleculesNavListVue />
+   </SharedContainerWrapper>
 </template>
 

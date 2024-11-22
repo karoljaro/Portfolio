@@ -1,8 +1,11 @@
 <template>
    <div ref="navLink" class="w-1/4">
-      <NuxtLink :to="url" class="flex items-center space-x-2 flex-nowrap">
-         <div ref="navLinkLine" class="h-[1px] border-b border-gray-600"></div>
-         <p>{{ text }}</p>
+      <NuxtLink
+         :to="data['url']"
+         class="text-fourth font-fira-code tracking-wide flex flex-nowrap items-center space-x-2 text-left text-base leading-normal lg:text-lg xl:text-xl"
+      >
+         <div ref="navLinkLine" class="border-third h-[1px] border-b"></div>
+         <p>{{ data['text'] }}</p>
       </NuxtLink>
    </div>
 </template>
@@ -12,8 +15,11 @@ const { $gsap } = useNuxtApp();
 
 defineProps<
    Required<{
-      readonly text: string;
-      readonly url: string | URL;
+      data: {
+         readonly id: string;
+         readonly text: string;
+         readonly url: string;
+      };
    }>
 >();
 
@@ -27,14 +33,14 @@ onMounted(() => {
       ctx = gsap.context(() => {
          useEventListener(navLink, 'mouseenter', () => {
             gsap.to(navLinkLine['value'], {
-               width: '50px',
+               width: '3.75rem',
                ease: 'power3.out'
             });
          });
 
          useEventListener(navLink, 'mouseleave', () => {
             gsap.to(navLinkLine['value'], {
-               width: '0px',
+               width: '0rem',
                ease: 'power3.in',
                onComplete: () => {
                   ctx.kill();

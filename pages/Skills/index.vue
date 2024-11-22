@@ -1,8 +1,5 @@
 <template>
   <SectionWrapper>
-    <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
-    <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
-    <SharedHeaderAtomsNavLink :text="'Home'" :url="'#'" />
     <br>
     <br>
     <br>
@@ -23,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import SectionWrapper from '~/components/Shared/SectionWrapper.vue';
+import SectionWrapper from '~/components/Shared/ContainerWrapper.vue';
 
 const isMobile = ref<boolean>(false);
 

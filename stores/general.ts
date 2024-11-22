@@ -7,8 +7,11 @@ export const useGeneralStore = defineStore({
     isMobile: false,
   }),
   actions: {
-    updateIsPreloaderVisible(value: boolean) {
-      this.isPreloaderVisible = value;
+    updateIsPreloaderVisible(newValue: typeof this.isPreloaderVisible) {
+      this.isPreloaderVisible = newValue;
+    },
+    updateIsMobile(newValue: typeof this.isMobile) {
+      this.isMobile = newValue;
     }
   },
   persist: {
