@@ -1,4 +1,4 @@
 ## Personal Portfolio
 
 > [!Note]
-> The application is under development.
+> The application is in the development phase and **UI** creation.
