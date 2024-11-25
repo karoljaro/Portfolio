@@ -2,11 +2,11 @@
    <div
       ref="preloader"
       v-if="isPreloaderVisible"
-      class="fixed left-0 top-0 z-30 flex h-full w-full items-center justify-center overflow-hidden bg-[#0c0a0b]"
+      class="fixed left-0 top-0 z-30 flex h-full w-full items-center justify-center overflow-hidden bg-primary"
    >
       <div
          ref="preloaderTextContainer"
-         class="invisible flex flex-row gap-5 overflow-hidden text-white"
+         class="invisible flex flex-row gap-5 overflow-hidden text-fourth"
       >
          <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl">The future</h1>
          <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl">is</h1>

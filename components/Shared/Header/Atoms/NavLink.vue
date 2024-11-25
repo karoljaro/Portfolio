@@ -1,11 +1,11 @@
 <template>
-   <div ref="navLink" class="w-1/4">
+   <div ref="navLink" class="max-w-min">
       <NuxtLink
          :to="data['url']"
-         class="text-fourth font-fira-code tracking-wide flex flex-nowrap items-center space-x-2 text-left text-base leading-normal lg:text-lg xl:text-xl"
+         class="group text-third font-fira-code flex flex-nowrap items-center space-x-2 text-left text-base leading-normal lg:text-lg xl:text-xl"
       >
-         <div ref="navLinkLine" class="border-third h-[1px] border-b"></div>
-         <p>{{ data['text'] }}</p>
+         <div ref="navLinkLine" class="border-third h-[0.0625rem] border-b group-hover:border-fourth"></div>
+         <p class="uppercase text-xl tracking-widest group-hover:text-fourth group-hover:font-medium">{{ data['text'] }}</p>
       </NuxtLink>
    </div>
 </template>

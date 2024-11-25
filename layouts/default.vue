@@ -1,6 +1,9 @@
 <template>
    <div>
       <SharedAnimationsThePreloader2 />
-      <slot />
+      <SharedContainerWrapper>
+         <SharedHeader />
+         <slot />
+      </SharedContainerWrapper>
    </div>
 </template>
