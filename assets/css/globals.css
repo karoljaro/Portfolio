@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+:root {
+   --DARK-primary-background-color: #121212;
+
+   --DARK-primary-text-color: #F5F5F5;
+   --DARK-secondary-text-color: #A6A6A6;
+   --DARK-third-text-color: #3D3D3D;
+
+   --DARK-primary-border-color: #3D3D3D;
+}
+
+@theme {
+   /* ==========[ BREAKPOINTS ]========== */
+   --breakpoint-xs: 30rem;
+
+   /* ==========[ BACKGROUND ]========== */
+   --color-primary-bg-color: var(--DARK-primary-background-color);
+
+   /* ==========[ TEXT ]========== */
+   --color-primary-color: var(--DARK-primary-text-color);
+   --color-second-color: var(--DARK-secondary-text-color);
+   --color-third-color: var(--DARK-third-text-color);
+
+   /* ==========[ FONT ]========== */
+}
