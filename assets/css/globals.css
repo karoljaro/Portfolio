@@ -16,7 +16,8 @@
 
 @theme {
    /* ==========[ BREAKPOINTS ]========== */
-   --breakpoint-xs: 30rem;
+   --breakpoint-xs: 30rem; /* 480px */
+   --breakpoint-3xl: 120rem; /* 1920px */
 
    /* ==========[ BACKGROUND ]========== */
    --color-primary-dark-bg: var(--DARK-primary-background-color);
@@ -34,4 +35,10 @@
    /* ==========[ FONT ]========== */
    --font-OpenSans: 'Open Sans', sans-serif;
    --font-FiraCode: 'Fira Code', monospace;
+}
+
+@layer base {
+   body {
+      @apply dark:bg-primary-dark-bg bg-primary-light-bg
+   }
 }

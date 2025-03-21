@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   css: ["@/assets/css/globals.css"],
+  pages: true,
   vite: {
     plugins: [tailwindcss()],
   },
@@ -26,7 +27,13 @@ export default defineNuxtConfig({
       },
     ],
   },
-  devtools: { enabled: true },
+  srcDir: './',
+  dir: {
+    layouts: 'app/layouts',
+    pages: 'app/pages',
+    plugins: 'app/plugins',
+    middleware: 'app/middleware',
+  },
   modules: [
     "@nuxt/eslint",
     "@nuxt/test-utils",
@@ -34,4 +41,5 @@ export default defineNuxtConfig({
     // "@nuxtjs/i18n",
     // "@nuxtjs/seo",
   ],
+  devtools: { enabled: true },
 });
