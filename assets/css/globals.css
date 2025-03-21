@@ -2,12 +2,16 @@
 
 :root {
    --DARK-primary-background-color: #121212;
-
    --DARK-primary-text-color: #F5F5F5;
    --DARK-secondary-text-color: #A6A6A6;
    --DARK-third-text-color: #3D3D3D;
-
    --DARK-primary-border-color: #3D3D3D;
+
+   --LIGHT-primary-background-color: #F5F5F5;
+   --LIGHT-primary-text-color: #121212;
+   --LIGHT-secondary-text-color: #3D3D3D;
+   --LIGHT-third-text-color: #A6A6A6;
+   --LIGHT-primary-border-color: #A6A6A6;
 }
 
 @theme {
@@ -15,12 +19,17 @@
    --breakpoint-xs: 30rem;
 
    /* ==========[ BACKGROUND ]========== */
-   --color-primary-bg-color: var(--DARK-primary-background-color);
+   --color-primary-dark-bg: var(--DARK-primary-background-color);
+   --color-primary-light-bg: var(--LIGHT-primary-background-color);
 
    /* ==========[ TEXT ]========== */
-   --color-primary-color: var(--DARK-primary-text-color);
-   --color-second-color: var(--DARK-secondary-text-color);
-   --color-third-color: var(--DARK-third-text-color);
+   --color-primary-dark-color: var(--DARK-primary-text-color);
+   --color-second-dark-color: var(--DARK-secondary-text-color);
+   --color-third-dark-color: var(--DARK-third-text-color);
+
+   --color-primary-light-color: var(--LIGHT-primary-text-color);
+   --color-second-light-color: var(--LIGHT-secondary-text-color);
+   --color-third-light-color: var(--LIGHT-third-text-color);
 
    /* ==========[ FONT ]========== */
    --font-OpenSans: 'Open Sans', sans-serif;
