@@ -8,22 +8,29 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   fonts: {
-    assets: {
-      prefix: '/_fonts/'
-    },
     families: [
       {
-        name: 'Open Sans',
-        provider: 'google',
+        name: "Open Sans",
+        provider: "google",
         display: "swap",
-      }
+        weights: ["300", "400", "500", "600"],
+        styles: ["normal", "italic"],
+        fallbacks: ["sans-serif"],
+      },
+      {
+        name: "Fira Code",
+        provider: "google",
+        display: "swap",
+        weights: ["400", "500"],
+        fallbacks: ["monospace"],
+      },
     ],
   },
   devtools: { enabled: true },
-  modules: [  
-    "@nuxt/eslint", 
-    "@nuxt/test-utils", 
-    "@nuxt/fonts"
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/test-utils",
+    "@nuxt/fonts",
     // "@nuxtjs/i18n",
     // "@nuxtjs/seo",
   ],

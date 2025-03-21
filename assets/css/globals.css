@@ -23,4 +23,6 @@
    --color-third-color: var(--DARK-third-text-color);
 
    /* ==========[ FONT ]========== */
+   --font-OpenSans: 'Open Sans', sans-serif;
+   --font-FiraCode: 'Fira Code', monospace;
 }
