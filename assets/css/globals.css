@@ -2,6 +2,7 @@
 
 :root {
    --DARK-primary-background-color: #121212;
+   --DARK-HOVER-background-color: #202020;
    --DARK-primary-text-color: #F5F5F5;
    --DARK-secondary-text-color: #A6A6A6;
    --DARK-third-text-color: #3D3D3D;
@@ -23,6 +24,8 @@
    --color-primary-dark-bg: var(--DARK-primary-background-color);
    --color-primary-light-bg: var(--LIGHT-primary-background-color);
 
+   --color-primary-dark-hover-bg: var(--DARK-HOVER-background-color);
+
    /* ==========[ TEXT ]========== */
    --color-primary-dark-color: var(--DARK-primary-text-color);
    --color-second-dark-color: var(--DARK-secondary-text-color);
@@ -35,6 +38,10 @@
    /* ==========[ FONT ]========== */
    --font-OpenSans: 'Open Sans', sans-serif;
    --font-FiraCode: 'Fira Code', monospace;
+
+   /* ==========[ BORDER ]========== */
+   --color-primary-dark-border: var(--DARK-primary-border-color);
+   --color-primary-light-border: var(--LIGHT-primary-border-color);
 }
 
 @layer base {

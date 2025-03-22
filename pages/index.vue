@@ -1,5 +1,5 @@
 <template>
   <div class="text-white">
-    TAK
+    <OrganismHeader />
   </div>
 </template>
