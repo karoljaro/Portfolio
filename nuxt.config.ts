@@ -27,8 +27,8 @@ export default defineNuxtConfig({
       },
     ],
   },
-  modules: ["@nuxt/eslint", // "@nuxtjs/i18n",
-  "@nuxt/test-utils", // "@nuxtjs/seo",
-  "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon"],
+  modules: [// "@nuxtjs/i18n",
+  // "@nuxtjs/seo",
+  "@nuxt/eslint", "@nuxt/test-utils", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
 });
