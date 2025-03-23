@@ -1,8 +1,11 @@
 <template>
-  <main>
-    <NuxtRouteAnnouncer />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </main>
+  <div>
+    <OrganismThePreloader />
+    <main>
+      <NuxtRouteAnnouncer />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </main>
+  </div>
 </template>
