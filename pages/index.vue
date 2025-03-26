@@ -1,5 +1,6 @@
 <template>
-  <div class="text-white">
+  <div>
     <OrganismHeader />
+    <OrganismHero />
   </div>
 </template>
