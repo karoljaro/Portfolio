@@ -45,6 +45,7 @@
    --color-third-light-color: var(--LIGHT-third-text-color);
    --color-fourth-light-color: var(--LIGHT-fourth-text-color);
 
+   --text-6\.5xl: 4rem;
    --text-10xl: 9rem;
    --text-11xl: 10rem;
 
