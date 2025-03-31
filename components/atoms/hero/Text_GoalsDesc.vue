@@ -1,6 +1,6 @@
 <template>
   <p
-    class="font-OpenSans dark:text-third-dark-color text-third-light-color text-3xl !leading-[130%] font-normal"
+    class="font-OpenSans dark:text-third-dark-color text-third-light-color !leading-[130%] font-normal text-xl xs:text-2xl lg:text-3xl"
   >
     <slot />
   </p>
