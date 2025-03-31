@@ -1,17 +1,35 @@
 <template>
-  <button class="flex max-w-80 md:max-w-[25rem] grow cursor-pointer items-stretch justify-between gap-2">
+  <button
+    class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 md:max-w-[25rem]"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
+  >
     <!-- ====================[LEFT PART OF BUTTON]==================== -->
     <div
-      class="text-fourth-dark-color bg-secondary-dark-bg flex h-fit grow items-center justify-center rounded-full md:px-12 md:py-4 px-8 py-3 leading-[130%] 2xl:py-6"
+      class="border-primary-dark-border bg-secondary-dark-bg text-fourth-dark-color relative flex h-fit grow items-center justify-center overflow-hidden rounded-full border px-8 py-3 leading-[130%] md:px-12 md:py-4 2xl:py-6"
+      :class="[{'text-white': isHovered}, isHovered ? 'text-change-active' : 'text-change-inactive']"
     >
-      <p class="font-OpenSans font-normal italic 2xl:text-3xl sm:text-2xl text-lg">
+      <p class="font-OpenSans relative z-20 text-lg font-normal italic sm:text-2xl 2xl:text-3xl">
         <slot />
       </p>
+      <div
+        class="slide-bg absolute inset-0 z-10 transform bg-[#121212]"
+        :class="{ 'slide-in-first': isHovered, 'slide-out-second': !isHovered && wasHovered }"
+      />
     </div>
 
     <!-- ====================[RIGHT PART OF BUTTON]==================== -->
-    <div ref="secondDivRef" class="bg-secondary-dark-bg flex shrink-0 items-center justify-center rounded-full" :style="secondDivStyle">
-      <Icon name="lucide:move-right" class="shrink-0 text-2xl md:text-4xl" />
+    <div
+      ref="secondDivRef"
+      class="border-primary-dark-border bg-secondary-dark-bg text-fourth-dark-color relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
+      :class="[{'text-white': isHovered}, isHovered ? 'text-change-active-second' : 'text-change-inactive-second']"
+      :style="secondDivStyle"
+    >
+      <Icon name="lucide:move-right" class="relative z-20 shrink-0 text-2xl md:text-4xl" />
+      <div
+        class="slide-bg absolute inset-0 z-10 transform bg-[#121212]"
+        :class="{ 'slide-in-second': isHovered, 'slide-out-first': !isHovered && wasHovered }"
+      />
     </div>
   </button>
 </template>
@@ -20,6 +38,17 @@
 const DEFAULT_WIDTH: number = 0;
 const secondDivRef = ref<HTMLDivElement | null>(null);
 const secondDivWidth = ref<number>(DEFAULT_WIDTH);
+const isHovered = ref(false);
+const wasHovered = ref(false);
+
+watch(isHovered, (newValue, oldValue) => {
+  if (oldValue === true && newValue === false) {
+    wasHovered.value = true;
+    setTimeout(() => {
+      wasHovered.value = false;
+    }, 600); // Czas trwania animacji + opóźnienie
+  }
+});
 
 const secondDivStyle = computed(() => ({
   width: `${secondDivWidth["value"]}px`,
@@ -41,3 +70,51 @@ onMounted(() => {
 
 useEventListener(window, "resize", updateWidth);
 </script>
+
+<style scoped>
+.slide-bg {
+  transition-property: transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transform: translateX(-100%);
+}
+
+/* Animacje wejścia (hover) */
+.slide-in-first {
+  transform: translateX(0);
+  transition-delay: 0ms;
+}
+
+.slide-in-second {
+  transform: translateX(0);
+  transition-delay: 290ms;
+}
+
+.slide-out-first {
+  transform: translateX(-100%);
+  transition-delay: 0ms;
+}
+
+.slide-out-second {
+  transform: translateX(-100%);
+  transition-delay: 290ms;
+}
+
+/* Przejścia kolorów dla pierwszego elementu */
+.text-change-active {
+  transition: color 50ms ease-in-out 0ms;
+}
+
+.text-change-inactive {
+  transition: color 50ms ease-in-out 300ms; /* Opóźnienie przy wyjściu */
+}
+
+/* Przejścia kolorów dla drugiego elementu */
+.text-change-active-second {
+  transition: color 50ms ease-in-out 290ms; /* Opóźnienie przy wejściu */
+}
+
+.text-change-inactive-second {
+  transition: color 50ms ease-in-out 0ms;
+}
+</style>
