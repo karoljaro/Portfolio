@@ -6,6 +6,7 @@
   >
     <!-- ====================[LEFT PART OF BUTTON]==================== -->
     <div
+      ref="firstDivRef"
       class="border-primary-dark-border bg-secondary-dark-bg text-fourth-dark-color relative flex h-fit grow items-center justify-center overflow-hidden rounded-full border px-8 py-3 leading-[130%] md:px-12 md:py-4 2xl:py-6"
       :class="[{'text-white': isHovered}, isHovered ? 'text-change-active' : 'text-change-inactive']"
     >
@@ -36,6 +37,7 @@
 
 <script setup lang="ts">
 const DEFAULT_WIDTH: number = 0;
+const firstDivRef = ref<HTMLDivElement | null>(null);
 const secondDivRef = ref<HTMLDivElement | null>(null);
 const secondDivWidth = ref<number>(DEFAULT_WIDTH);
 const isHovered = ref(false);
@@ -51,6 +53,7 @@ watch(isHovered, (newValue, oldValue) => {
 });
 
 const secondDivStyle = computed(() => ({
+  height: `${secondDivWidth["value"]}px`,
   width: `${secondDivWidth["value"]}px`,
 }));
 
@@ -58,8 +61,8 @@ const updateWidth = async () => {
   secondDivWidth["value"] = DEFAULT_WIDTH;
 
   nextTick(() => {
-    if (secondDivRef["value"]) {
-      secondDivWidth["value"] = secondDivRef["value"].offsetHeight;
+    if (secondDivRef["value"] && firstDivRef['value']) {
+      secondDivWidth["value"] = firstDivRef["value"].offsetHeight;
     }
   });
 };
