@@ -77,18 +77,13 @@ defineProps<{
 }
 
 .slider .list .item:hover {
-  /* filter: grayscale(0); */
-  color: #ff3333; /* Jasny czerwony */
+  color: rgb(245, 245, 245);
   text-shadow: 
-    0 0 5px rgba(255, 0, 0, 0.9),
-    0 0 10px rgba(255, 0, 0, 0.8),
-    0 0 20px rgba(255, 0, 0, 0.7),
-    0 0 30px rgba(255, 0, 0, 0.6),
-    0 0 40px rgba(255, 0, 0, 0.5),
-    0 0 50px rgba(255, 0, 0, 0.4),
-    0 0 60px rgba(255, 0, 0, 0.3);
-  filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
-  transform: scale(1.05);
+    0 0 5px rgba(245, 245, 245, 0.6),
+    0 0 10px rgba(245, 245, 245, 0.4),
+    0 0 15px rgba(245, 245, 245, 0.2);
+  filter: brightness(1.15) drop-shadow(0 0 5px rgba(245, 245, 245, 0.4));
+  transform: scale(1.03);
   transition: color 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease, transform 0.3s ease;
 }
 
