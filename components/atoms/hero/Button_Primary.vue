@@ -1,21 +1,43 @@
-<!-- <template>
-  <button class="relative block overflow-hidden mx-4 my-auto uppercase border border-solid border-primary-dark-border before:content-[''] before:absolute before:-top-[3.125rem] before:left-0 before:right-0 before:bottom-0 before:border-r-[3.125rem] before:border-r-transparent before:border-b-[5rem] before:-translate-x-full hover:before:translate-x-0">
-    <slot />
-  </button>
-</template> -->
-
 <template>
-  <button class="flex w-full max-w-[25rem] gap-4">
+  <button class="flex max-w-80 md:max-w-[25rem] grow cursor-pointer items-stretch justify-between gap-2">
+    <!-- ====================[LEFT PART OF BUTTON]==================== -->
     <div
-      class="text-fourth-dark-color bg-secondary-dark-bg py-6 grow rounded-full text-3xl leading-[130%]"
+      class="text-fourth-dark-color bg-secondary-dark-bg flex h-fit grow items-center justify-center rounded-full md:px-12 md:py-4 px-8 py-3 leading-[130%] 2xl:py-6"
     >
-      <p class="font-OpenSans text-3xl italic font-normal"><slot /></p>
+      <p class="font-OpenSans font-normal italic 2xl:text-3xl sm:text-2xl text-lg">
+        <slot />
+      </p>
     </div>
 
-    <div
-      class="bg-secondary-dark-bg flex size-20 shrink-0 items-center justify-center rounded-full"
-    >
-      <Icon name="lucide:move-right" class="shrink-0 text-4xl" />
+    <!-- ====================[RIGHT PART OF BUTTON]==================== -->
+    <div ref="secondDivRef" class="bg-secondary-dark-bg flex shrink-0 items-center justify-center rounded-full" :style="secondDivStyle">
+      <Icon name="lucide:move-right" class="shrink-0 text-2xl md:text-4xl" />
     </div>
   </button>
 </template>
+
+<script setup lang="ts">
+const DEFAULT_WIDTH: number = 0;
+const secondDivRef = ref<HTMLDivElement | null>(null);
+const secondDivWidth = ref<number>(DEFAULT_WIDTH);
+
+const secondDivStyle = computed(() => ({
+  width: `${secondDivWidth["value"]}px`,
+}));
+
+const updateWidth = async () => {
+  secondDivWidth["value"] = DEFAULT_WIDTH;
+
+  nextTick(() => {
+    if (secondDivRef["value"]) {
+      secondDivWidth["value"] = secondDivRef["value"].offsetHeight;
+    }
+  });
+};
+
+onMounted(() => {
+  updateWidth();
+});
+
+useEventListener(window, "resize", updateWidth);
+</script>
