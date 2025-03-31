@@ -1,5 +1,5 @@
 <template>
-  <section class="space-y-16 py-8">
+  <section class="space-y-12 md:space-y-16 py-8">
     <div class="space-y-6">
       <MoleculesHeroIntroduction />
 

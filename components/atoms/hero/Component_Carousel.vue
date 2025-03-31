@@ -6,7 +6,7 @@
     <div class="list">
       <template v-for="(item, index) in techNameList" :key="index">
         <div class="item" :style="`--position: ${index}`">
-          <p>{{ item }}</p>
+          <p class="text-2xl sm:text-3xl text-primary-dark-color font-normal font-OpenSans">{{ item }}</p>
         </div>
       </template>
     </div>
@@ -56,10 +56,6 @@ defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f5f5f5;
-  font-family: "Open Sans", sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
