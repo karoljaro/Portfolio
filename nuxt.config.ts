@@ -31,4 +31,5 @@ export default defineNuxtConfig({
   // "@nuxtjs/seo",
   "@nuxt/eslint", "@nuxt/test-utils", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
+  ssr: false
 });
