@@ -47,8 +47,9 @@ defineProps<{
   animation: autoRun 15s linear infinite;
   transition: filter 0.5s;
   animation-delay: calc(
-    (15s / var(--quantity)) * (var(--position) - 1)
+    (15s / var(--quantity)) * (var(--position) - 1) - 15s
   ) !important;
+  animation-fill-mode: both;
 }
 
 .slider .list .item {
