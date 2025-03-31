@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         name: "Open Sans",
         provider: "google",
         display: "swap",
-        weights: ["400", "600"],
+        weights: ["300", "400", "600"],
         styles: ["normal", "italic"],
         fallbacks: ["sans-serif"],
       },
@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         name: "Fira Code",
         provider: "google",
         display: "swap",
-        weights: ["400", "500"],
+        weights: ["400", "500", "600"],
         fallbacks: ["monospace"],
       },
     ],
@@ -31,4 +31,5 @@ export default defineNuxtConfig({
   // "@nuxtjs/seo",
   "@nuxt/eslint", "@nuxt/test-utils", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
+  ssr: false
 });

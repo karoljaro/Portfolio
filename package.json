@@ -29,6 +29,7 @@
     "@vueuse/nuxt": "^13.0.0",
     "pinia-plugin-persistedstate": "^4.2.0",
     "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "sass": "^1.86.0"
   }
 }
