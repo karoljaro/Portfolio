@@ -5,7 +5,7 @@
         <Icon name="lucide:github" />
       </template>
       <template #default>
-        Github
+        GitHub
       </template>
     </AtomsHeroButtonSocial>
   </div>
