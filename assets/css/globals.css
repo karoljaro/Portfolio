@@ -19,7 +19,7 @@
    --LIGHT-primary-border-color: #A6A6A6;
 }
 
-/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
    /* ==========[ BREAKPOINTS ]========== */
