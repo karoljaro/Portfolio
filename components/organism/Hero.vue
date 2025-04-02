@@ -25,4 +25,5 @@
     </div>
     <MoleculesHeroCarousel />
   </section>
+  <MoleculesSharedSectionLabel />
 </template>
