@@ -2,15 +2,15 @@
   <div
     v-if="isPreloaderVisible"
     ref="preloader"
-    class="bg-primary-dark-bg fixed top-0 left-0 z-30 flex h-full w-full items-center justify-center overflow-hidden"
+    class="bg-primary-bg fixed top-0 left-0 z-30 flex h-full w-full items-center justify-center overflow-hidden"
   >
     <div
       ref="preloaderTextContainer"
       class="text-fourth invisible flex flex-row gap-5 overflow-hidden"
     >
-      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-dark-color">The future</h1>
-      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-dark-color">is</h1>
-      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-dark-color">yours</h1>
+      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-color">The future</h1>
+      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-color">is</h1>
+      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-color">yours</h1>
     </div>
   </div>
 </template>

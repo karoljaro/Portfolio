@@ -6,7 +6,7 @@
     <div class="list">
       <template v-for="(item, index) in techNameList" :key="index">
         <div class="item" :style="`--position: ${index}`">
-          <p class="text-2xl sm:text-3xl text-primary-dark-color font-normal font-OpenSans">{{ item }}</p>
+          <p class="text-2xl sm:text-3xl text-primary-color font-normal font-OpenSans">{{ item }}</p>
         </div>
       </template>
     </div>
