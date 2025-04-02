@@ -7,7 +7,7 @@
     <!-- ====================[LEFT PART OF BUTTON]==================== -->
     <div
       ref="firstDivRef"
-      class="border-primary-dark-border bg-secondary-dark-bg text-fourth-dark-color relative flex h-fit grow items-center justify-center overflow-hidden rounded-full border px-8 py-3 leading-[130%] md:px-12 md:py-4 2xl:py-6"
+      class="border-primary-border bg-secondary-bg text-fourth-color relative flex h-fit grow items-center justify-center overflow-hidden rounded-full border px-8 py-3 leading-[130%] md:px-12 md:py-4 2xl:py-6"
       :class="[{'text-white': isHovered}, isHovered ? 'text-change-active' : 'text-change-inactive']"
     >
       <p class="font-OpenSans relative z-20 text-lg font-normal italic sm:text-2xl 2xl:text-3xl">
@@ -22,7 +22,7 @@
     <!-- ====================[RIGHT PART OF BUTTON]==================== -->
     <div
       ref="secondDivRef"
-      class="border-primary-dark-border bg-secondary-dark-bg text-fourth-dark-color relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
+      class="border-primary-border bg-secondary-bg text-fourth-color relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
       :class="[{'text-white': isHovered}, isHovered ? 'text-change-active-second' : 'text-change-inactive-second']"
       :style="secondDivStyle"
     >
