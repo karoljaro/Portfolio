@@ -1,6 +1,6 @@
 <template>
-  <div class="flex">
+  <div class="flex items-center gap-6">
     <AtomsSharedTextSectionLabel>About_me</AtomsSharedTextSectionLabel>
-    <!-- <AtomsSharedLinePrimary /> -->
+    <AtomsSharedLinePrimary direction="right"/>
   </div>
 </template>

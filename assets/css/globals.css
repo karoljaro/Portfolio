@@ -47,6 +47,7 @@
    --color-third-color: var(--third-text-color);
    --color-fourth-color: var(--fourth-text-color);
 
+   --text-4\.5xl: 2.5rem; /* 40px */
    --text-6\.5xl: 4rem;
    --text-10xl: 9rem;
    --text-11xl: 10rem;
