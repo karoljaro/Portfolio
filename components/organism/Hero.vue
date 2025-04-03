@@ -1,5 +1,5 @@
 <template>
-  <section class="space-y-12 md:space-y-16 py-8">
+  <NuxtLayout name="section">
     <div class="space-y-6">
       <MoleculesHeroIntroduction />
 
@@ -24,5 +24,5 @@
       <MoleculesHeroSocialBtns />
     </div>
     <MoleculesHeroCarousel />
-  </section>
+  </NuxtLayout>
 </template>
