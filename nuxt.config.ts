@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         name: "Open Sans",
         provider: "google",
         display: "swap",
-        weights: ["300", "400", "600"],
+        weights: ["300", "400", "600", "700"],
         styles: ["normal", "italic"],
         fallbacks: ["sans-serif"],
       },

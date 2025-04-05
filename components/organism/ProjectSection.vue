@@ -1,5 +1,5 @@
 <template>
   <NuxtLayout name="section">
-     <MoleculesSharedSectionLabel>Projects</MoleculesSharedSectionLabel>
+    <MoleculesSharedSectionLabel>Projects</MoleculesSharedSectionLabel>
   </NuxtLayout>
 </template>
