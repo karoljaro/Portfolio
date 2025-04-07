@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
   icon: {
     provider: "server",
+    serverBundle: "local",
     customCollections: [
       {
         prefix: "static_Lucide",
@@ -41,4 +42,5 @@ export default defineNuxtConfig({
   modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
   ssr: false,
+  compatibilityDate: "2025-04-07",
 });
