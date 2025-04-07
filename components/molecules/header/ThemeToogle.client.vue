@@ -1,7 +1,7 @@
 <template>
   <AtomsHeaderBoxThemeToogle @click="toggleTheme">
     <Icon
-      :name="mode == 'dark' ? 'lucide:moon' : 'lucide:sun'"
+      :name="mode == 'dark' ? 'static_Lucide:moon' : 'static_Lucide:sun'"
       class="text-2xl"
     />
   </AtomsHeaderBoxThemeToogle>
@@ -22,4 +22,3 @@ const toggleTheme = () => {
 };
 
 </script>
-<!-- lucide:sun lucide:moon -->

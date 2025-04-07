@@ -1,6 +1,6 @@
 <template>
   <div>
-    <OrganismThePreloader />
+    <!-- <OrganismThePreloader /> -->
     <main>
       <NuxtRouteAnnouncer />
       <NuxtLayout>

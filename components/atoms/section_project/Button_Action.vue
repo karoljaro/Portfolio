@@ -6,7 +6,7 @@
     class="font-FiraCode border-primary-border inline-flex items-center justify-between gap-x-2 rounded-full border bg-[#121212] p-4 text-left text-xl font-semibold text-[#F5F5F5] hover:bg-primary-border duration-300"
     
   >
-    <Icon :name="$props['type'] === 'GitHub' ? 'lucide:github' : 'lucide:radio'" class="text-2xl" />
+    <Icon :name="$props['type'] === 'GitHub' ? 'static_Lucide:github' : 'static_Lucide:radio'" class="text-2xl" />
     {{ type }}
   </NuxtLink>
 </template>
