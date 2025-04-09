@@ -26,7 +26,7 @@
       :class="[{'text-white': isHovered}, isHovered ? 'text-change-active-second' : 'text-change-inactive-second']"
       :style="secondDivStyle"
     >
-      <Icon name="lucide:move-right" class="relative z-20 shrink-0 text-2xl md:text-4xl" />
+      <Icon name="static_Lucide:move-right" class="relative z-20 shrink-0 text-2xl md:text-4xl" />
       <div
         class="slide-bg absolute inset-0 z-10 transform bg-[#121212]"
         :class="{ 'slide-in-second': isHovered, 'slide-out-first': !isHovered && wasHovered }"
