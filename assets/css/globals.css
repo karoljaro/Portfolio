@@ -2,35 +2,35 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@layer base {
-   :root {   
-      --primary-background-color: #F5F5F5;
-      --secondary-background-color: #121212;
+:root {   
+   --primary-background-color: #F5F5F5;
+   --secondary-background-color: #121212;
+   --HOVER-background-color: #202020;
+   --primary-text-color: #121212;
+   --secondary-text-color: #3D3D3D;
+   --third-text-color: #A6A6A6;
+   --fourth-text-color: #F5F5F5;
+   --primary-border-color: #A6A6A6;
+
+   @variant dark {
+      --primary-background-color: #121212;
+      --secondary-background-color: #F5F5F5;
       --HOVER-background-color: #202020;
-      --primary-text-color: #121212;
-      --secondary-text-color: #3D3D3D;
-      --third-text-color: #A6A6A6;
-      --fourth-text-color: #F5F5F5;
-      --primary-border-color: #A6A6A6;
-
-      @variant dark {
-         --primary-background-color: #121212;
-         --secondary-background-color: #F5F5F5;
-         --HOVER-background-color: #202020;
-         --primary-text-color: #F5F5F5;
-         --secondary-text-color: #A6A6A6;
-         --third-text-color: #3D3D3D;
-         --fourth-text-color: #121212;  
-         --primary-border-color: #3D3D3D;
-      }
+      --primary-text-color: #F5F5F5;
+      --secondary-text-color: #A6A6A6;
+      --third-text-color: #3D3D3D;
+      --fourth-text-color: #121212;  
+      --primary-border-color: #3D3D3D;
    }
+}
 
+@layer base {
    body {
       @apply bg-primary-bg
    }
 }
 
-@theme {
+@theme inline {
    /* ==========[ BREAKPOINTS ]========== */
    --breakpoint-xs: 30rem; /* 480px */
    --breakpoint-3xl: 120rem; /* 1920px */

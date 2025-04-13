@@ -2,11 +2,21 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   css: ["@/assets/css/globals.css"],
   pages: true,
+
   vite: {
     plugins: [tailwindcss()],
+  },
+  icon: {
+    provider: "server",
+    serverBundle: "local",
+    customCollections: [
+      {
+        prefix: "static_Lucide",
+        dir: "./assets/icons"
+      }
+    ]
   },
   fonts: {
     families: [
@@ -14,7 +24,7 @@ export default defineNuxtConfig({
         name: "Open Sans",
         provider: "google",
         display: "swap",
-        weights: ["300", "400", "600"],
+        weights: ["300", "400", "600", "700"],
         styles: ["normal", "italic"],
         fallbacks: ["sans-serif"],
       },
@@ -27,9 +37,10 @@ export default defineNuxtConfig({
       },
     ],
   },
-  modules: [// "@nuxtjs/i18n",
-  // "@nuxtjs/seo",
-  "@nuxt/eslint", "@nuxt/test-utils", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
+
+  components: true,
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
-  ssr: false
+  ssr: false,
+  compatibilityDate: "2025-04-07",
 });
