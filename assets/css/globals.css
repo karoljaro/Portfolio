@@ -58,4 +58,5 @@
 
    /* ==========[ BORDER ]========== */
    --color-primary-border: var(--primary-border-color);
+   --radius-5xl: 3rem;
 }
