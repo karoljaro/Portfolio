@@ -2,6 +2,10 @@
   <NuxtLayout name="section">
     <MoleculesSharedSectionLabel>Projects</MoleculesSharedSectionLabel>
 
-    <MoleculesSectionProjectCardFeatured />
+    <div>
+      <MoleculesSectionProjectCardFeatured />
+      <MoleculesSectionProjectCardFeatured />
+      <MoleculesSectionProjectCardFeatured />
+    </div>
   </NuxtLayout>
 </template>
