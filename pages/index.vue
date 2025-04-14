@@ -5,5 +5,6 @@
     <OrganismAboutSection />
     <OrganismProjectSection />
     <OrganismWorkSection />
+    <OrganismFooter />
   </div>
 </template>
