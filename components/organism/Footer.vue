@@ -8,5 +8,6 @@
     </div>
 
     <MoleculesFooterSocialButtons />
+    <MoleculesFooterCopyright />
   </NuxtLayout>
 </template>
