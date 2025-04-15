@@ -1,9 +1,11 @@
 <template>
-  <AtomsHeaderBoxThemeToogle @click="toggleTheme">
-    <Icon
-      :name="mode == 'dark' ? 'static_Lucide:moon' : 'static_Lucide:sun'"
-      class="text-2xl"
-    />
+  <AtomsHeaderBoxThemeToogle :icon-key="mode" @click="toggleTheme">
+    <transition name="fade" mode="out-in">
+      <Icon
+        :name="mode == 'dark' ? 'static_Lucide:moon' : 'static_Lucide:sun'"
+        class="text-2xl"
+      />
+    </transition>
   </AtomsHeaderBoxThemeToogle>
 </template>
 
@@ -20,5 +22,16 @@ const mode = computed(() =>
 const toggleTheme = () => {
   store.value = store.value === "dark" ? "light" : "dark";
 };
-
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+</style>
