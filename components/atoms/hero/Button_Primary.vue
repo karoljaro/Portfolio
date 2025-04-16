@@ -1,20 +1,20 @@
 <template>
   <button
-    class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 md:max-w-[25rem]"
+    class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 md:max-w-[25rem] drop-shadow-md dark:drop-shadow-none"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
     <!-- ====================[LEFT PART OF BUTTON]==================== -->
     <div
       ref="firstDivRef"
-      class="border-primary-border bg-secondary-bg text-fourth-color relative flex h-fit grow items-center justify-center overflow-hidden rounded-full border px-8 py-3 leading-[130%] md:px-12 md:py-4 2xl:py-6"
-      :class="[{'text-white': isHovered}, isHovered ? 'text-change-active' : 'text-change-inactive']"
+      class="border-primary-border bg-secondary-bg text-fourth-color relative flex h-fit grow items-center justify-center overflow-hidden rounded-full border-2 px-8 py-3 leading-[130%] md:px-12 md:py-4 2xl:py-6"
+      :class="[{'dark:text-white text-neutral-900': isHovered}, isHovered ? 'text-change-active' : 'text-change-inactive']"
     >
       <p class="font-OpenSans relative z-20 text-lg font-normal italic sm:text-2xl 2xl:text-3xl">
         <slot />
       </p>
       <div
-        class="slide-bg absolute inset-0 z-10 transform bg-[#121212]"
+        class="slide-bg absolute inset-0 z-10 transform bg-[#F5F5F5] dark:bg-[#121212]"
         :class="{ 'slide-in-first': isHovered, 'slide-out-second': !isHovered && wasHovered }"
       />
     </div>
@@ -22,13 +22,13 @@
     <!-- ====================[RIGHT PART OF BUTTON]==================== -->
     <div
       ref="secondDivRef"
-      class="border-primary-border bg-secondary-bg text-fourth-color relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
-      :class="[{'text-white': isHovered}, isHovered ? 'text-change-active-second' : 'text-change-inactive-second']"
+      class="border-primary-border border-2 bg-secondary-bg text-fourth-color relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
+      :class="[{'dark:text-white text-neutral-900': isHovered}, isHovered ? 'text-change-active-second' : 'text-change-inactive-second']"
       :style="secondDivStyle"
     >
       <Icon name="static_Lucide:move-right" class="relative z-20 shrink-0 text-2xl md:text-4xl" />
       <div
-        class="slide-bg absolute inset-0 z-10 transform bg-[#121212]"
+        class="slide-bg absolute inset-0 z-10 transform bg-[#F5F5F5] dark:bg-[#121212]"
         :class="{ 'slide-in-second': isHovered, 'slide-out-first': !isHovered && wasHovered }"
       />
     </div>
@@ -61,7 +61,7 @@ const updateWidth = async () => {
   secondDivWidth["value"] = DEFAULT_WIDTH;
 
   nextTick(() => {
-    if (secondDivRef["value"] && firstDivRef['value']) {
+    if (secondDivRef["value"] && firstDivRef["value"]) {
       secondDivWidth["value"] = firstDivRef["value"].offsetHeight;
     }
   });
