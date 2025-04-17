@@ -1,3 +1,3 @@
 <template>
-  <AtomsHeroButtonPrimary>Projects</AtomsHeroButtonPrimary>
+  <AtomsHeroButtonPrimary to="#projects">Projects</AtomsHeroButtonPrimary>
 </template>
