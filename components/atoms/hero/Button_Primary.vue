@@ -1,6 +1,6 @@
 <template>
   <button
-    class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 md:max-w-[25rem] drop-shadow-md dark:drop-shadow-none"
+    class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 md:max-w-[25rem] drop-shadow-md dark:drop-shadow-none select-none"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
