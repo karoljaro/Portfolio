@@ -4,6 +4,8 @@
     class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 drop-shadow-md select-none md:max-w-[25rem] dark:drop-shadow-none"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
+    @touchstart="isHovered = true"
+    @touchend="isHovered = false"
     @click="scrollToId"
   >
     <!-- ====================[LEFT PART OF BUTTON]==================== -->
