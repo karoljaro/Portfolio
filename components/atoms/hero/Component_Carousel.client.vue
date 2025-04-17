@@ -65,19 +65,31 @@ const { technologies } = useHeroStore();
   /* filter: grayscale(1); */
 }
 
+/* Hover dla trybu jasnego (light mode) */
 .slider .list .item:hover {
-  color: rgb(245, 245, 245);
+  color: #121212; /* ciemny kolor dla trybu jasnego */
   text-shadow:
-    0 0 5px rgba(245, 245, 245, 0.6),
-    0 0 10px rgba(245, 245, 245, 0.4),
-    0 0 15px rgba(245, 245, 245, 0.2);
-  filter: brightness(1.15) drop-shadow(0 0 5px rgba(245, 245, 245, 0.4));
+    0 0 5px rgba(151, 151, 151, 0.6),
+    0 0 10px rgba(151, 151, 151, 0.4),
+    0 0 15px rgba(151, 151, 151, 0.2);
+  filter: brightness(0.85) drop-shadow(0 0 5px rgba(151, 151, 151, 0.4));
   transform: scale(1.03);
   transition:
     color 0.3s ease,
     text-shadow 0.3s ease,
     filter 0.3s ease,
     transform 0.3s ease;
+}
+
+/* Hover dla trybu ciemnego (dark mode) */
+:where([data-theme="dark"]) .slider .list .item:hover {
+  color: rgb(245, 245, 245); /* jasny kolor dla trybu ciemnego */
+  text-shadow:
+    0 0 5px rgba(245, 245, 245, 0.6),
+    0 0 10px rgba(245, 245, 245, 0.4),
+    0 0 15px rgba(245, 245, 245, 0.2);
+  filter: brightness(1.15) drop-shadow(0 0 5px rgba(245, 245, 245, 0.4));
+  transform: scale(1.03);
 }
 
 .slider[reverse="true"] .item {
