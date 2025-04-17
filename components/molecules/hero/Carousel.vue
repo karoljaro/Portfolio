@@ -1,7 +1,7 @@
 <template>
   <div>
     <AtomsSharedLinePrimary />
-    <div class="md:py-4 py-2">
+    <div class="lg:py-4 md:py-2 py-0">
       <AtomsHeroComponentCarousel :tech-name-list="staticTechList" />
     </div>
     <AtomsSharedLinePrimary />
