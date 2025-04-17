@@ -1,5 +1,6 @@
 <template>
-  <button
+  <NuxtLink
+    :to="$props['to']"
     class="hover-group flex max-w-80 grow cursor-pointer items-stretch justify-between gap-2 md:max-w-[25rem] drop-shadow-md dark:drop-shadow-none select-none"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
@@ -32,7 +33,7 @@
         :class="{ 'slide-in-second': isHovered, 'slide-out-first': !isHovered && wasHovered }"
       />
     </div>
-  </button>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -42,6 +43,10 @@ const secondDivRef = ref<HTMLDivElement | null>(null);
 const secondDivWidth = ref<number>(DEFAULT_WIDTH);
 const isHovered = ref(false);
 const wasHovered = ref(false);
+
+defineProps<{
+  to: string;
+}>();
 
 watch(isHovered, (newValue, oldValue) => {
   if (oldValue === true && newValue === false) {
