@@ -3,7 +3,7 @@
     <OrganismHeader />
     <OrganismHero />
     <OrganismAboutSection />
-    <OrganismProjectSection />
+    <OrganismProjectSection id="projects" />
     <OrganismWorkSection />
     <OrganismFooter />
   </div>
