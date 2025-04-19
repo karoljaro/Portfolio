@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="space-y-4 md:space-y-2">
     <div>
       <AtomsFooterTextName>Karol</AtomsFooterTextName>
       <AtomsFooterTextName class="sm:hidden">Jaroń</AtomsFooterTextName>
