@@ -1,5 +1,5 @@
 <template>
-  <p class="text-xl font-OpenSans font-light text-primary-color xs:text-2xl">
+  <p class="font-OpenSans font-light text-primary-color text-base xs:text-lg">
     <slot />
   </p>
 </template>

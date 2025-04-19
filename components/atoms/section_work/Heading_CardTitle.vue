@@ -1,5 +1,5 @@
 <template>
-  <h2 class="font-FiraCode text-primary-color text-5xl font-semibold">
+  <h2 class="font-FiraCode text-primary-color text-4xl font-semibold">
     <slot />
   </h2>
 </template>
