@@ -6,17 +6,11 @@
       </template>
       GitHub
     </AtomsFooterButtonSocialBtn>
-    <AtomsFooterButtonSocialBtn to="https://github.com/karoljaro">
+    <AtomsFooterButtonSocialBtn to="https://www.linkedin.com/in/karol-jaro%C5%84-474214361/">
       <template #icon>
-        <Icon name="static_Lucide:github" />
+        <Icon name="static_Lucide:linkedin" />
       </template>
-      GitHub
-    </AtomsFooterButtonSocialBtn>
-    <AtomsFooterButtonSocialBtn to="https://github.com/karoljaro">
-      <template #icon>
-        <Icon name="static_Lucide:github" />
-      </template>
-      GitHub
+      Linkedin
     </AtomsFooterButtonSocialBtn>
   </div>
 </template>
