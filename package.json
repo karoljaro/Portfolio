@@ -7,11 +7,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "generate:icon-types": "bash ./scripts/generate-icon-types.sh"
   },
   "dependencies": {
     "@nuxt/eslint": "1.3.0",
     "@tailwindcss/vite": "^4.1.4",
+    "bun": "^1.2.10",
     "eslint": "^9.24.0",
     "gsap": "^3.12.7",
     "nuxt": "^3.16.2",
@@ -23,6 +25,7 @@
     "@nuxt/fonts": "^0.11.1",
     "@nuxt/icon": "^1.12.0",
     "@pinia/nuxt": "^0.11.0",
+    "@types/bun": "^1.2.10",
     "@vueuse/nuxt": "^13.1.0",
     "pinia-plugin-persistedstate": "^4.2.0",
     "prettier": "3.5.3",
