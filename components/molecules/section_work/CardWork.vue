@@ -1,14 +1,19 @@
 <template>
   <AtomsSectionWorkCardWork>
-    <AtomsSectionWorkIconCardIcon icon-name="static_Lucide:braces" />
+    <AtomsSectionWorkIconCardIcon :icon-name="$props['data'].icon" />
 
-    <AtomsSectionWorkHeadingCardTitle>Web Dev</AtomsSectionWorkHeadingCardTitle>
+    <AtomsSectionWorkHeadingCardTitle>{{ $props['data'].title }}</AtomsSectionWorkHeadingCardTitle>
 
     <AtomsSectionWorkTextCardDescription>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt accusamus nemo omnis expedita, hic amet odit aliquam nihil aliquid repudiandae illo
-      veniam dicta corporis impedit, cupiditate cumque nostrum! Nemo, consequatur?
+      {{ $props['data'].description }}
     </AtomsSectionWorkTextCardDescription>
   </AtomsSectionWorkCardWork>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import type { WorkArea_DATA } from '~/data/workArea';
+
+defineProps<{
+  data: WorkArea_DATA;
+}>();
+</script>
