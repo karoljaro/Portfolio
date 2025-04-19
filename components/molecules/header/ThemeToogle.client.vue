@@ -3,7 +3,7 @@
     <transition name="fade" mode="out-in">
       <Icon
         :name="mode == 'dark' ? 'static_Lucide:moon' : 'static_Lucide:sun'"
-        class="text-2xl"
+        class="text-xl md:text-2xl"
       />
     </transition>
   </AtomsHeaderBoxThemeToogle>
