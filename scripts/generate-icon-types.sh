@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # --- Konfiguracja ---
+# Pobierz absolutną ścieżkę do katalogu, w którym znajduje się ten skrypt
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # Ścieżka do folderu z ikonami (względna lub absolutna)
-ICONS_DIR="../assets/icons" 
+ICONS_DIR="$SCRIPT_DIR/../assets/icons" 
 # Ścieżka do pliku wyjściowego
-OUTPUT_FILE="../shared/types/iconsNamesUnion.ts" 
+OUTPUT_FILE="$SCRIPT_DIR/../shared/types/iconsNamesUnion.ts" 
 # Nazwa generowanego typu unii
 TYPE_NAME="IconName" 
 # Dozwolone rozszerzenia (format: *.ext). Pusta lista oznacza wszystkie pliki.
@@ -15,6 +17,8 @@ ALLOWED_EXTENSIONS="*.svg"
 # Sprawdź, czy folder z ikonami istnieje
 if [ ! -d "$ICONS_DIR" ]; then
   echo "❌ Błąd: Folder ikon '$ICONS_DIR' nie istnieje."
+  echo "   Bieżący katalog roboczy: $(pwd)"
+  echo "   Katalog skryptu: $SCRIPT_DIR"
   exit 1
 fi
 
