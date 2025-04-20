@@ -6,7 +6,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # Ścieżka do folderu z ikonami (względna lub absolutna)
 ICONS_DIR="$SCRIPT_DIR/../assets/icons" 
 # Ścieżka do pliku wyjściowego
-OUTPUT_FILE="$SCRIPT_DIR/../shared/types/iconsNamesUnion.ts" 
+OUTPUT_FILE="$SCRIPT_DIR/../shared/__types__/iconsNamesUnion.generated.ts" 
 # Nazwa generowanego typu unii
 TYPE_NAME="IconName" 
 # Dozwolone rozszerzenia (format: *.ext). Pusta lista oznacza wszystkie pliki.
