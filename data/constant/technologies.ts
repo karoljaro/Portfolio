@@ -1,9 +1,9 @@
-export interface Technology_DATA {
+export interface IConstantTechnologyDATA {
   name: string;
   url: string;
 }
 
-export default <Technology_DATA[]>[
+export default <IConstantTechnologyDATA[]>[
   { name: "Nuxt.js", url: "https://nuxt.com" },
   { name: "Vue", url: "https://vuejs.org" },
   { name: "Next.js", url: "https://nextjs.org" },

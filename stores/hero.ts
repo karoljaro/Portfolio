@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import technologies from "~/data/technologies";
+import technologies from "~/data/constant/technologies";
 
 export const useHeroStore = defineStore("heroStore", {
   state: () => ({
