@@ -17,6 +17,3 @@ export interface ITranslatableProjectData {
     description: string;
 }
 
-// ===============[ MERGED ]===============
-export interface IProjectData extends IConstantProjectData, ITranslatableProjectData {}
-

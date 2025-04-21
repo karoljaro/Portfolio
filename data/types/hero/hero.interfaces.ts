@@ -19,6 +19,3 @@ export interface ITranslatableHeroData {
   goalsDescription: string;
   projectButtonLabel: string;
 }
-
-// ===============[ MERGED ]===============
-export interface IHeroData extends IConstantHeroData, ITranslatableHeroData {}

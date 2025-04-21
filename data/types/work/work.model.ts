@@ -3,5 +3,6 @@ import type { TransformStructured, Flatten } from "../utils/transform-properties
 
 import type { ITranslatableWorkData, IConstantWorkData } from "./work.interfaces";
 
-type WorkStructure = ModelStructure<IConstantWorkData, ITranslatableWorkData>;
-export type TransformedWorkData = Flatten<TransformStructured<WorkStructure>>;
+export type WorkDataRaw = ITranslatableWorkData & IConstantWorkData;
+type WorkDataStructure = ModelStructure<IConstantWorkData, ITranslatableWorkData>;
+export type WorkDataModel = Flatten<TransformStructured<WorkDataStructure>>;

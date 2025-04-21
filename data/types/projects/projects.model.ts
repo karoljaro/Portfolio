@@ -3,5 +3,6 @@ import type { TransformStructured, Flatten } from "../utils/transform-properties
 
 import type { ITranslatableProjectData, IConstantProjectData } from "./projects.interfaces";
 
-type ProjectStructure = ModelStructure<IConstantProjectData, ITranslatableProjectData>;
-export type TransformedProjectData = Flatten<TransformStructured<ProjectStructure>>;
+export type ProjectDataRaw = ITranslatableProjectData & IConstantProjectData;
+type ProjectDataStructure = ModelStructure<IConstantProjectData, ITranslatableProjectData>;
+export type ProjectDataModel = Flatten<TransformStructured<ProjectDataStructure>>;

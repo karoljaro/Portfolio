@@ -3,5 +3,6 @@ import type { TransformStructured, Flatten } from "../utils/transform-properties
 
 import type { ITranslatableAboutData } from "./about.interfaces";
 
-type AboutStructure = ModelStructure<unknown, ITranslatableAboutData>;
-export type TransformedAboutData = Flatten<TransformStructured<AboutStructure>>;
+export type AboutDataRaw = ITranslatableAboutData;
+type AboutDataStructure = ModelStructure<unknown, ITranslatableAboutData>;
+export type AboutDataModel = Flatten<TransformStructured<AboutDataStructure>>;

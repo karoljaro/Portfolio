@@ -3,5 +3,6 @@ import type { TransformStructured, Flatten } from "../utils/transform-properties
 
 import type { ITranslatableHeroData, IConstantHeroData } from "./hero.interfaces";
 
-type HeroStructure = ModelStructure<IConstantHeroData, ITranslatableHeroData>;
-export type TransformedHeroData = Flatten<TransformStructured<HeroStructure>>;
+export type HeroDataRaw = ITranslatableHeroData & IConstantHeroData;
+type HeroDataStructure = ModelStructure<IConstantHeroData, ITranslatableHeroData>;
+export type HeroDataModel = Flatten<TransformStructured<HeroDataStructure>>;
