@@ -1,4 +1,4 @@
-import type { IConstantSocialLinksData } from "./shared.interfaces";
+import type { IConstantSocialLinksData } from "../shared/shared.interfaces";
 
 // ===============[ CONST ]===============
 export interface IConstantTechnologyData {
@@ -10,7 +10,7 @@ export interface IConstantHeroData {
   primaryHeading: string;
   secondaryHeading: string;
   technologiesList: IConstantTechnologyData[];
-  socialButtons: IConstantSocialLinksData[]
+  socialButtons: IConstantSocialLinksData[];
 }
 
 // ===============[ TRANSLATABLE ]===============
