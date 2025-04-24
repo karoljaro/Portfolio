@@ -1,12 +1,6 @@
-import type { IconName } from "~/shared/types/iconsNamesUnion";
+import type { WorkDataRaw } from "./types/app-data.model";
 
-export interface WorkArea_DATA {
-   title: string;
-   icon: `static_Lucide:${IconName}`;
-   description: string;
-}
-
-export default <WorkArea_DATA[]>[
+export default <WorkDataRaw[]>[
    {
       title: "Web Dev",
       icon: "static_Lucide:braces",

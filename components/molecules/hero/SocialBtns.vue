@@ -12,17 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import type { IconName } from "~/shared/types/iconsNamesUnion";
+import type { HeroDataRaw } from "@types-app-data"
 
-interface SocialInfo_DATA {
-  name: string;
-  icon: `static_Lucide:${IconName}`;
-  url: string;
-}
-
-const socialInfo: SocialInfo_DATA[] = [
+const socialInfo: HeroDataRaw['socialButtons'] = [
   {
-    name: "GitHub",
+    name: "GitHub",    
     icon: "static_Lucide:github",
     url: "https://github.com/karoljaro",
   },
