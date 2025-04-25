@@ -42,6 +42,5 @@
 </template>
 
 <script setup lang="ts">
-import { useHeroStore } from "~/stores/hero";
 const heroStore = useHeroStore();
 </script>

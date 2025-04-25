@@ -1,7 +1,11 @@
 <template>
   <NuxtLayout name="section">
-    <MoleculesSharedSectionLabel> About_me </MoleculesSharedSectionLabel>
+    <MoleculesSharedSectionLabel>{{ aboutStore.aboutSectionLabel }}</MoleculesSharedSectionLabel>
 
-    <MoleculesSectionAboutDescription />
+    <MoleculesSectionAboutDescription :description="aboutStore.description" />
   </NuxtLayout>
 </template>
+
+<script setup lang="ts">
+const aboutStore = useAboutStore();
+</script>
