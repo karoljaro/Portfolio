@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <AtomsHeroHeadingSecondary>
-      Web Developer
-    </AtomsHeroHeadingSecondary>
-  </div>
+  <AtomsHeroHeadingSecondary>
+    <slot />
+  </AtomsHeroHeadingSecondary>
 </template>

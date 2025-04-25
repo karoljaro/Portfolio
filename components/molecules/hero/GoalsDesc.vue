@@ -6,5 +6,5 @@
 const props = defineProps<{
   description: string;
 }>();
-const { processedSegments } = useProcessedText(toRef(props, 'description'));
+const { processedSegments } = useProcessedText(toRef(props, "description"));
 </script>

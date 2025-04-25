@@ -3,7 +3,7 @@
 	"primaryHeading": "Full-stack",
 	"secondaryHeading": "web developer",
 	"goalsDescription": "My goal is to **write maintainable, clean** and **understandable code** to process development was enjoyable.",
-	"projectButtonLabel": "View My Projects",
+	"projectButtonLabel": "Projects",
 	"socialButtons": [
 		{
 			"name": "GitHub",
@@ -30,7 +30,7 @@
 			"url": "https://nextjs.org"
 		},
 		{
-			"name": "React",
+			"name": "React.js",
 			"url": "https://reactjs.org"
 		},
 		{
@@ -58,7 +58,7 @@
 			"url": "https://elysiajs.com"
 		},
 		{
-			"name": "TRPC",
+			"name": "tRPC",
 			"url": "https://trpc.io"
 		},
 		{
