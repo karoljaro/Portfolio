@@ -11,9 +11,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { WorkArea_DATA } from '~/data/workArea';
+import type { WorkDataRaw } from '~/data/types/app-data.model';
 
 defineProps<{
-  data: WorkArea_DATA;
+  data: WorkDataRaw;
 }>();
 </script>

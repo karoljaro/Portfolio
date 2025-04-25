@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import heroDataFromJson from "../data/locales/en/hero.data.json" with { type: 'json' };
-import type { HeroDataRaw } from "@types-app-data";
+import type { HeroDataRaw } from "~/data/types/app-data.model";
 
 export const useHeroStore = defineStore("heroStore", {
   state: (): { data: HeroDataRaw } => ({

@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-4">
     <template v-for="({name, icon, url}, index) in socialInfo" :key="index">
-      <AtomsHeroButtonSocial :to="url" class="shadow-md">
+      <AtomsHeroButtonSocial :to="url as string" class="shadow-md">
         <template #link_icon>
           <Icon :name="icon" />
         </template>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import type { HeroDataRaw } from "@types-app-data"
+import type { HeroDataRaw } from "~/data/types/app-data.model"
 
 const socialInfo: HeroDataRaw['socialButtons'] = [
   {
