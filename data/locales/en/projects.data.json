@@ -1,0 +1,42 @@
+{
+	"$schema": "../../../data/schema/project.schema.json",
+	"projectSectionLabel": "Projects",
+	"projects": [
+		{
+			"id": "855d46a2-b45c-40a7-a81c-6768d98d9fca",
+			"title": "Desktop Shopping List Application",
+			"description": "This Python academic project delivers an intuitive desktop shopping list application built with Tkinter. It allows users to easily add, edit, delete, and mark items as purchased. The application utilizes Clean Architecture principles, creating a modular and maintainable structure by separating business logic from the UI and data layers, which simplifies testing and future enhancements. This project demonstrates skills in Python GUI development with Tkinter and the practical application of Clean Architecture for building organized, scalable desktop applications.",
+			"usedTechnologies": ["Python", "Tkinter", "Pytest"],
+			"projectLinks": [
+				{
+					"name": "GitHub",
+					"url": "https://github.com/karoljaro/Tkinter_ShopList_Todo"
+				}
+			]
+		},
+		{
+			"id": "aebb7ff1-f56a-4c65-a6ca-b3f67b1fb631",
+			"title": "HKcode Website Modernization",
+			"description": "This project modernized the HKcode website frontend, focusing on a complete UI/UX redesign for a contemporary and intuitive user experience across all devices. Key efforts included significant performance optimization for faster load times and smoother interaction, alongside improvements in SEO for better search visibility and adherence to accessibility standards. The result is a faster, more user-friendly, and accessible company website.",
+			"usedTechnologies": ["React.js", "Vite", "Tailwindcss", "Zod", "EmailJS", "TypeScript"],
+			"projectLinks": [
+				{
+					"name": "Live",
+					"url": "https://hkcode.pl/"
+				}
+			]
+		},
+		{
+			"id": "878d2d92-11f7-4093-894b-b8cfb145e506",
+			"title": "Personal Portfolio",
+			"description": "This project is the personal portfolio you are currently viewing, designed to showcase my skills and projects. Built with Nuxt 3 and Vue 3, it leverages TypeScript for type safety and Pinia for state management. The user interface is styled using Tailwind CSS and follows the Atomic Design methodology for a modular and maintainable structure. It features smooth animations powered by GSAP, dynamic icons via Nuxt Icon, theme switching (light/dark mode), and is structured for potential internationalization.",
+			"usedTechnologies": ["Nuxt.js", "Vue.js",	"Vite", "TypeScript", "GSAP", "Bun.js"],
+			"projectLinks": [
+				{
+					"name": "GitHub",
+					"url": "https://github.com/karoljaro/Portfolio"
+				}
+			]
+		}
+	]
+}

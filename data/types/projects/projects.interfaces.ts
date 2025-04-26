@@ -1,7 +1,7 @@
 // ===============[ CONST ]===============
 export interface IConstantProjectLinkData {
-    name: string;
-    url: string | URL;
+    name: "GitHub" | "Demo" | "Live";
+    url: string;
 }
 
 export interface IConstantProjectData {
