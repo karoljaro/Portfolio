@@ -17,3 +17,6 @@ export interface ITranslatableProjectData {
     description: string;
 }
 
+export interface ITranslatableProjectSectionData {
+    projectSectionLabel: string;
+}
