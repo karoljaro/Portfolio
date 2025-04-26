@@ -1,0 +1,92 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.com/schemas/hero.schema.json",
+	"title": "Hero Section Data",
+	"description": "Schema for the data structure of the hero section.",
+	"type": "object",
+	"properties": {
+		"introduction": {
+			"description": "The main introductory text (e.g., 'I'm Karol Jaroń').",
+			"type": "string"
+		},
+		"primaryHeading": {
+			"description": "The primary heading text (e.g., 'Full-stack').",
+			"type": "string"
+		},
+		"secondaryHeading": {
+			"description": "The secondary heading text (e.g., 'web developer').",
+			"type": "string"
+		},
+		"goalsDescription": {
+			"description": "Text describing goals or mission. May contain markdown-like syntax for highlighting (**text**).",
+			"type": "string"
+		},
+		"projectButtonLabel": {
+			"description": "The label for the button linking to the projects section.",
+			"type": "string"
+		},
+		"socialButtons": {
+			"description": "An array containing data for social media links/buttons.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/socialButton"
+			}
+		},
+		"technologiesList": {
+			"description": "An array containing data for technologies displayed in the carousel.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/technologyItem"
+			}
+		}
+	},
+	"required": [
+		"introduction",
+		"primaryHeading",
+		"secondaryHeading",
+		"goalsDescription",
+		"projectButtonLabel",
+		"socialButtons",
+		"technologiesList"
+	],
+	"definitions": {
+		"socialButton": {
+			"title": "Social Button",
+			"description": "Data structure for a single social link/button.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "The display name for the social link (e.g., 'GitHub', 'LinkedIn').",
+					"type": "string"
+				},
+				"url": {
+					"description": "The URL for the social profile.",
+					"type": "string",
+					"format": "uri"
+				},
+				"icon": {
+					"description": "The name/identifier for the icon associated with the link (e.g., 'static_Lucide:github').",
+					"type": "string"
+				}
+			},
+			"required": ["name", "url", "icon"]
+		},
+		"technologyItem": {
+			"title": "Technology Item",
+			"description": "Data structure for a single technology shown in the carousel.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "The display name of the technology (e.g., 'Nuxt.js', 'Vue').",
+					"type": "string"
+				},
+				"url": {
+					"description": "The URL linking to the technology's website.",
+					"type": "string",
+					"format": "uri"
+				}
+			},
+			"required": ["name", "url"]
+		}
+	}
+}

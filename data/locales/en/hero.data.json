@@ -1,4 +1,5 @@
 {
+	"$schema": "../../../data/schema/hero.schema.json",
 	"introduction": "I'm Karol Jaroń",
 	"primaryHeading": "Full-stack",
 	"secondaryHeading": "web developer",
