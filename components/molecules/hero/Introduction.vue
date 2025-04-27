@@ -1,3 +1,3 @@
 <template>
-  <AtomsHeroTextIntroduction>I'm Karol Jaroń</AtomsHeroTextIntroduction>
+  <AtomsHeroTextIntroduction><slot /></AtomsHeroTextIntroduction>
 </template>

@@ -1,11 +1,19 @@
 <template>
   <AtomsFooterCardCredits>
-    <AtomsFooterHeadingCreditsTitle>Site</AtomsFooterHeadingCreditsTitle>
+    <AtomsFooterHeadingCreditsTitle>{{ creditsData.creditTitle }}</AtomsFooterHeadingCreditsTitle>
 
     <div class="space-y-2">
-      <AtomsFooterTextCreditsDescription>Handcrafted by Me /</AtomsFooterTextCreditsDescription>
-      <AtomsFooterTextCreditsDescription>Designed by Me /</AtomsFooterTextCreditsDescription>
-      <AtomsFooterTextCreditsDescription>Powered by Nuxt.js</AtomsFooterTextCreditsDescription>
+      <template v-for="(item, index) in creditsData.creditsDescribe" :key="index">
+        <AtomsFooterTextCreditsDescription>{{ item }}</AtomsFooterTextCreditsDescription>
+      </template>
     </div>
   </AtomsFooterCardCredits>
 </template>
+
+<script setup lang="ts">
+import type { FooterDataRaw } from "~/data/types/footer/footer.model";
+
+defineProps<{
+  creditsData: FooterDataRaw["credits"];
+}>();
+</script>

@@ -1,7 +1,7 @@
 <template>
-  <div class="slider" :style="`--width: 200px; --height: 50px; --quantity: ${technologies.length}`">
+  <div class="slider" :style="`--width: 200px; --height: 50px; --quantity: ${technologiesList.length}`">
     <div class="list">
-      <template v-for="({ name, url }, index) in technologies" :key="index">
+      <template v-for="({ name, url }, index) in technologiesList" :key="index">
         <div class="item" :style="`--position: ${index}`">
           <NuxtLink target="_blank" rel="noreferrer noopener" :to="url" class="text-primary-color font-OpenSans text-xl font-normal lg:text-2xl xl:text-3xl">
             {{ name }}
@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-const { technologies } = useHeroStore();
+const { technologiesList } = useHeroStore();
 </script>
 
 <style lang="css" scoped>

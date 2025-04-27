@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <AtomsHeroHeadingPrimary>Full-stack</AtomsHeroHeadingPrimary>
-  </div>
+  <AtomsHeroHeadingPrimary><slot /></AtomsHeroHeadingPrimary>
 </template>

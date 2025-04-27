@@ -1,0 +1,23 @@
+{
+	"$schema": "../../../data/schema/footer.schema.json",
+	"footerSectionLabel": "Contact",
+	"firstName": "Karol",
+	"surname": "Jaroń",
+	"specialization": "Full-stack web developer",
+	"socialButtons": [
+		{
+			"name": "GitHub",
+			"url": "https://github.com/karoljaro",
+			"icon": "static_Lucide:github"
+		},
+		{
+			"name": "LinkedIn",
+			"url": "https://www.linkedin.com/in/karol-jaro%C5%84-474214361/",
+			"icon": "static_Lucide:linkedin"
+		}
+	],
+	"credits": {
+		"creditTitle": "Site",
+		"creditsDescribe": ["Created by Me /", "Designed by Me /", "Powered by Nuxt.js /"]
+	}
+}

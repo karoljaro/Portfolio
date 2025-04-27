@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.com/schemas/projects.schema.json",
+	"title": "Project Section Data",
+	"description": "Schema for the data structure of the projects section, including the section label and a list of projects.",
+	"type": "object",
+	"properties": {
+		"projectSectionLabel": {
+			"description": "The label/title for the entire projects section.",
+			"type": "string"
+		},
+		"projects": {
+			"description": "An array containing data for individual projects.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/projectItem"
+			}
+		}
+	},
+	"required": ["projectSectionLabel", "projects"],
+	"definitions": {
+		"projectItem": {
+			"title": "Project Item",
+			"description": "Data structure for a single project.",
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "Unique identifier for the project.",
+					"type": "string"
+				},
+				"title": {
+					"description": "The title of the project.",
+					"type": "string"
+				},
+				"usedTechnologies": {
+					"description": "List of technologies used in the project (e.g., names or keys).",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"projectLinks": {
+					"description": "List of links related to the project (e.g., GitHub, Live Demo).",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/projectLink"
+					}
+				},
+				"description": {
+					"description": "A description of the project.",
+					"type": "string"
+				}
+			},
+			"required": ["id", "title", "usedTechnologies", "projectLinks", "description"]
+		},
+		"projectLink": {
+			"title": "Project Link",
+			"description": "Structure for a link associated with a project.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "The display name for the link (e.g., 'GitHub', 'Live Demo').",
+					"type": "string",
+					"enum": ["GitHub", "Demo", "Live"] 
+				},
+				"url": {
+					"description": "The URL for the link.",
+					"type": "string",
+					"format": "uri"
+				}
+			},
+			"required": ["name", "url"]
+		}
+	}
+}

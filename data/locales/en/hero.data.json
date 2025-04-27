@@ -1,0 +1,74 @@
+{
+	"$schema": "../../../data/schema/hero.schema.json",
+	"introduction": "I'm Karol Jaroń",
+	"primaryHeading": "Full-stack",
+	"secondaryHeading": "web developer",
+	"goalsDescription": "My goal is to **write maintainable, clean** and **understandable code** to process development was enjoyable.",
+	"projectButtonLabel": "Projects",
+	"socialButtons": [
+		{
+			"name": "GitHub",
+			"url": "https://github.com/karoljaro",
+			"icon": "static_Lucide:github"
+		},
+		{
+			"name": "LinkedIn",
+			"url": "https://www.linkedin.com/in/karol-jaro%C5%84-474214361/",
+			"icon": "static_Lucide:linkedin"
+		}
+	],
+	"technologiesList": [
+		{
+			"name": "Nuxt.js",
+			"url": "https://nuxt.com"
+		},
+		{
+			"name": "Vue",
+			"url": "https://vuejs.org"
+		},
+		{
+			"name": "Next.js",
+			"url": "https://nextjs.org"
+		},
+		{
+			"name": "React.js",
+			"url": "https://reactjs.org"
+		},
+		{
+			"name": "Tailwindcss",
+			"url": "https://tailwindcss.com"
+		},
+		{
+			"name": "Javascript",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+		},
+		{
+			"name": "Typescript",
+			"url": "https://www.typescriptlang.org"
+		},
+		{
+			"name": "Bun.js",
+			"url": "https://bun.sh"
+		},
+		{
+			"name": "Angular",
+			"url": "https://angular.io"
+		},
+		{
+			"name": "Elysia.js",
+			"url": "https://elysiajs.com"
+		},
+		{
+			"name": "tRPC",
+			"url": "https://trpc.io"
+		},
+		{
+			"name": "Docker",
+			"url": "https://www.docker.com"
+		},
+		{
+			"name": "Prisma",
+			"url": "https://www.prisma.io"
+		}
+	]
+}
