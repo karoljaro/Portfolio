@@ -1,0 +1,21 @@
+{
+	"$schema": "../../../data/schema/work.schema.json",
+	"workSectionLabel": "My_work_area",
+	"workItems": [
+		{
+			"title": "Web Dev",
+			"icon": "static_Lucide:braces",
+			"description": "Creating modern, responsive, and performant web applications and user interfaces using frameworks like Vue.js, Nuxt.js, and React.js, with a strong focus on clean code, accessibility, and user experience."
+		},
+		{
+			"title": "Rest Api",
+			"icon": "static_Lucide:database",
+			"description": "Designing and developing robust RESTful APIs for seamless data communication between frontend and backend systems. Focused on clear endpoint design, efficient data modeling, and secure data handling."
+		},
+		{
+			"title": "DevOps",
+			"icon": "static_Lucide:workflow",
+			"description": "Implementing and managing CI/CD pipelines for automated testing and deployment, containerization (e.g., Docker), and infrastructure setup to streamline the development lifecycle and ensure reliable application delivery."
+		}
+	]
+}

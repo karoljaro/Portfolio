@@ -8,3 +8,7 @@ export interface IConstantWorkData {
 export interface ITranslatableWorkData {
     description: string;
 }
+
+export interface ITranslatableWorkSectionData {
+    workSectionLabel: string;
+}

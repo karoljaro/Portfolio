@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.com/schemas/work.schema.json",
+	"title": "Work Area Data",
+	"description": "Schema for the data structure of the work area section, including the section label and a list of work items.",
+	"type": "object",
+	"properties": {
+		"workSectionLabel": {
+			"description": "The label/title for the entire work area section.",
+			"type": "string"
+		},
+		"workItems": {
+			"description": "An array containing descriptions for individual work areas.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/workItem"
+			}
+		}
+	},
+	"required": ["workSectionLabel", "workItems"],
+	"definitions": {
+		"workItem": {
+			"title": "Work Area Item",
+			"description": "Structure for a single work area description.",
+			"type": "object",
+			"properties": {
+				"title": {
+					"description": "The title of the work area (e.g., 'Web Development', 'UI/UX Design').",
+					"type": "string"
+				},
+				"icon": {
+					"description": "The identifier for the icon representing the work area (e.g., 'static_Lucide:code').",
+					"type": "string"
+				},
+				"description": {
+					"description": "A description of the work area and related skills/focus.",
+					"type": "string"
+				}
+			},
+			"required": ["title", "icon", "description"]
+		}
+	}
+}
