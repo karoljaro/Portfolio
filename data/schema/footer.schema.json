@@ -1,0 +1,74 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.com/schemas/footer.schema.json",
+	"title": "Footer Data",
+	"description": "Schema for the data structure of the website footer.",
+	"type": "object",
+	"properties": {
+		"footerSectionLabel": {
+			"description": "The label for the footer section (e.g., 'Contact & Credits').",
+			"type": "string"
+		},
+		"firstName": {
+			"description": "The first name to display in the footer.",
+			"type": "string"
+		},
+		"surname": {
+			"description": "The surname to display in the footer.",
+			"type": "string"
+		},
+		"specialization": {
+			"description": "The specialization or role to display (e.g., 'Full-stack Developer').",
+			"type": "string"
+		},
+		"socialButtons": {
+			"description": "An array containing data for social media links/buttons displayed in the footer.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/socialButton"
+			}
+		},
+		"credits": {
+			"description": "Contains the title and description lines for the credits section.",
+			"type": "object",
+			"properties": {
+				"creditTitle": {
+					"description": "The title for the credits section (e.g., 'Site', 'Credits').",
+					"type": "string"
+				},
+				"creditsDescribe": {
+					"description": "An array of strings describing the credits (e.g., 'Created by Me', 'Powered by Nuxt').",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"required": ["creditTitle", "creditsDescribe"]
+		}
+	},
+	"required": ["footerSectionLabel", "firstName", "surname", "specialization", "socialButtons", "credits"],
+	"definitions": {
+		"socialButton": {
+			"title": "Social Button",
+			"description": "Data structure for a single social link/button.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "The display name for the social link (e.g., 'GitHub', 'LinkedIn').",
+					"type": "string"
+				},
+				"url": {
+					"description": "The URL for the social profile.",
+					"type": "string",
+					"format": "uri"
+				},
+				"icon": {
+					"description": "The name/identifier for the icon associated with the link (e.g., 'static_Lucide:github').",
+					"type": "string"
+				}
+			},
+			"required": ["name", "url", "icon"]
+		}
+	}
+}
