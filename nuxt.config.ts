@@ -14,9 +14,18 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: "static_Lucide",
-        dir: "./assets/icons"
-      }
-    ]
+        dir: "./assets/icons",
+      },
+    ],
+  },
+  robots: {
+    allow: "/",
+    sitemap: "/sitemap.xml",
+
+  },
+  site: {
+    url: "https://example.com",
+    name: "Personal Portfolio",
   },
   fonts: {
     families: [
@@ -39,7 +48,7 @@ export default defineNuxtConfig({
   },
 
   components: true,
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate", "@nuxtjs/robots", "@nuxtjs/sitemap"],
   devtools: { enabled: true },
   ssr: false,
   compatibilityDate: "2025-04-07",
