@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="section">
-    <MoleculesSharedSectionLabel>{{ workStore.workSectionLabel }}</MoleculesSharedSectionLabel>
+    <MoleculesSharedSectionLabel :text="workStore.workSectionLabel" />
 
     <div class="flex flex-wrap justify-around gap-10 items-center">
       <template v-for="(data, index) in workStore.workItems" :key="index">
