@@ -3,30 +3,60 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onUnmounted, nextTick } from 'vue';
+import { tryOnMounted } from '@vueuse/core';
+
 const props = defineProps<{
   text: string;
 }>();
+
 const { $gsap } = useNuxtApp();
 const textElementRef = ref<HTMLParagraphElement | null>(null);
-const transfromText = ref<string>('');
 
-transfromText['value'] = `> ${props.text}`;
+let ctx: gsap.Context | undefined;
+let exposedAnimationCreator: (() => gsap.core.Timeline | null) | null = null;
 
-const createAppearAnimation = () => {
-  const tl = $gsap.timeline({ paused: true });
-  if (!textElementRef.value) return null;
-  tl.to(textElementRef["value"], {
-    duration: 1,
-    scrambleText: {
-      text: transfromText['value'],
-      chars: "X0mYFSISQcoqjvZJwzWbUeDgHhJkL",
-    }
-  });
+tryOnMounted(async () => {
+  await nextTick();
 
-  return tl;
-};
+  if (!textElementRef.value) {
+    console.warn("Text_SectionLabel: textElementRef is not available.");
+    return;
+  }
+
+  ctx = $gsap.context(() => {
+    const createAnimationInsideContext = () => {
+      if (!textElementRef.value) {
+        console.warn("Text_SectionLabel (context): No target text element found for animation.");
+        return null;
+      }
+      const tl = $gsap.timeline({ paused: true });
+      tl.to(textElementRef.value, {
+        duration: 1,
+        scrambleText: {
+          text: `> ${props.text}`,
+          chars: "X0mYFSISQcoqjvZJwzWbUeDgHhJkL",
+        }
+      });
+      return tl;
+    };
+
+    exposedAnimationCreator = createAnimationInsideContext;
+
+  }, textElementRef.value);
+});
+
+onUnmounted(() => {
+  ctx?.revert();
+});
 
 defineExpose({
-  createAppearAnimation,
+  createAppearAnimation: () => {
+    if (exposedAnimationCreator) {
+      return exposedAnimationCreator();
+    }
+    console.warn("Text_SectionLabel: exposedAnimationCreator is not yet available.");
+    return null;
+  },
 });
 </script>

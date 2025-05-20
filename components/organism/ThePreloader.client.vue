@@ -29,7 +29,7 @@ const h1Elements = ref<(Element | ComponentPublicInstance | null)[]>([]);
 
 let ctx: gsap.Context;
 
-onMounted(async () => {
+tryOnMounted(async () => {
   await nextTick();
 
   if (

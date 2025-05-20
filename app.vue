@@ -11,11 +11,10 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, onBeforeUnmount } from 'vue';
-const { $ScrollSmoother, $ScrollTrigger } = useNuxtApp();
+const { $ScrollSmoother } = useNuxtApp();
 const { smScroll, setScrollSmoother } = useGeneralStore();
 
-onMounted(async () => {
+tryOnMounted(() => {
   setScrollSmoother(
     $ScrollSmoother.create({
       smooth: 1.2,
@@ -23,11 +22,6 @@ onMounted(async () => {
       smoothTouch: 0.1,
     }),
   );
-
-  await document.fonts.ready;
-  await nextTick();
-
-  $ScrollTrigger.refresh();
 });
 
 onBeforeUnmount(() => {

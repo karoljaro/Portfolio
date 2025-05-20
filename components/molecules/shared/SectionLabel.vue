@@ -27,7 +27,7 @@ const { $gsap, $ScrollTrigger } = useNuxtApp();
 let ctx: gsap.Context;
 let mainTimeLine: gsap.core.Timeline | null = null;
 
-onMounted(async () => {
+tryOnMounted(async () => {
   await nextTick();
   await document.fonts.ready;
 

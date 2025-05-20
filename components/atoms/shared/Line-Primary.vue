@@ -4,27 +4,27 @@
       v-if="$props.direction === 'both'"
       ref="bothLineRef"
       class="via-primary-border w-full origin-center transform bg-gradient-to-r from-transparent from-0% via-50% to-transparent to-100%"
-      :style="`height: ${borderWidth}px; will-change: transform, opacity;`"
+      :style="`height: ${borderWidth}px;`"
     />
 
     <div
       v-if="$props.direction === 'right'"
       ref="rightLineRef"
       class="from-primary-border w-full origin-left transform bg-gradient-to-r from-80% to-transparent to-100%"
-      :style="`height: ${borderWidth}px; will-change: transform, opacity;`"
+      :style="`height: ${borderWidth}px;`"
     />
 
     <div
       v-if="$props.direction === 'left'"
       ref="leftLineRef"
       class="from-primary-border w-full origin-right transform bg-gradient-to-l from-80% to-transparent to-100%"
-      :style="`height: ${borderWidth}px; will-change: transform, opacity;`"
+      :style="`height: ${borderWidth}px;`"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'; 
+import { ref, onUnmounted, nextTick } from 'vue'; 
 const props = withDefaults(
   defineProps<{
     direction?: "right" | "left" | "both";
@@ -45,7 +45,7 @@ const leftLineRef = ref<HTMLDivElement | null>(null);
 let ctx: gsap.Context;
 let exposedAnimationCreator: (() => gsap.core.Timeline | null) | null = null;
 
-onMounted(async () => {
+tryOnMounted(async () => {
   await nextTick();
   ctx = $gsap.context(() => {
     const createAnimationInsideContext = () => {
