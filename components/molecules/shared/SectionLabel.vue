@@ -47,7 +47,7 @@ onMounted(async () => {
           start: "top 80%",
           onEnter: () => mainTimeLine?.play(),
           toggleActions: "play none none none",
-          markers: import.meta.dev,
+          // markers: import.meta.dev,
         });
       } else {
         if (!textAnimation) console.warn("SectionLabel: Text animation could not be created.");
