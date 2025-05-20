@@ -85,7 +85,7 @@ onMounted(async () => {
     };
 
     exposedAnimationCreator = createAnimationInsideContext;
-  }, lineComponentRoot);
+  }, lineComponentRoot.value as HTMLDivElement);
 });
 
 onUnmounted(() => {
