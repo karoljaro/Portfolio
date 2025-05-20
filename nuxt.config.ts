@@ -48,8 +48,7 @@ export default defineNuxtConfig({
         lang: "en",
       }
     }
-  },
-  components: true,
+  },  components: true,
   modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
   ssr: false,
