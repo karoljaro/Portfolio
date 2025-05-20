@@ -4,21 +4,21 @@
       v-if="$props.direction === 'both'"
       ref="bothLineRef"
       class="via-primary-border w-full origin-center transform bg-gradient-to-r from-transparent from-0% via-50% to-transparent to-100%"
-      :style="`height: ${borderWidth}px;`"
+      :style="`height: ${borderWidth}px; will-change: transform, opacity;`"
     />
 
     <div
       v-if="$props.direction === 'right'"
       ref="rightLineRef"
       class="from-primary-border w-full origin-left transform bg-gradient-to-r from-80% to-transparent to-100%"
-      :style="`height: ${borderWidth}px;`"
+      :style="`height: ${borderWidth}px; will-change: transform, opacity;`"
     />
 
     <div
       v-if="$props.direction === 'left'"
       ref="leftLineRef"
       class="from-primary-border w-full origin-right transform bg-gradient-to-l from-80% to-transparent to-100%"
-      :style="`height: ${borderWidth}px;`"
+      :style="`height: ${borderWidth}px; will-change: transform, opacity;`"
     />
   </div>
 </template>
