@@ -37,7 +37,18 @@ export default defineNuxtConfig({
       },
     ],
   },
-
+  app: {
+    head: {
+      title: "Karol Jaroń | Full-Stack Web Developer",
+      meta: [
+        { name: "description", content: "Portfolio Full-Stack Web Developera specjalizującego się w ekosystemie JavaScript (Vue.js, Nuxt, React, Node.js). REST API, DevOps, UI/UX. Sprawdź moje projekty i technologie."},
+        { name: "author", content: "Karol Jaroń" },
+      ],
+      htmlAttrs: {
+        lang: "en",
+      }
+    }
+  },
   components: true,
   modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
   devtools: { enabled: true },
