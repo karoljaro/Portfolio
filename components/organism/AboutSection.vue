@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="section">
-    <MoleculesSharedSectionLabel>{{ aboutStore.aboutSectionLabel }}</MoleculesSharedSectionLabel>
+    <MoleculesSharedSectionLabel :text="aboutStore.aboutSectionLabel" />
 
     <MoleculesSectionAboutDescription :description="aboutStore.description" />
   </NuxtLayout>

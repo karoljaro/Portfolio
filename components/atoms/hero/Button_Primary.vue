@@ -46,6 +46,7 @@ const secondDivRef = ref<HTMLDivElement | null>(null);
 const secondDivWidth = ref<number>(DEFAULT_WIDTH);
 const isHovered = ref(false);
 const wasHovered = ref(false);
+const generalStore = useGeneralStore();
 
 const props = defineProps<{
   to: string;
@@ -55,8 +56,9 @@ const interialUrl = props["to"].replace("#", "");
 
 function scrollToId() {
   const el = document.getElementById(interialUrl);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
+  const currentSmScroll = generalStore.smScroll;
+  if (el && currentSmScroll) {
+    currentSmScroll.scrollTo(el, true, "top top");
   }
 }
 

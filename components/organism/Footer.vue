@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="section">
-    <MoleculesSharedSectionLabel>{{ footerStore.footerSectionLabel }}</MoleculesSharedSectionLabel>
+    <MoleculesSharedSectionLabel :text="footerStore.footerSectionLabel" />
 
     <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-6">
       <MoleculesFooterPersonInfo :credit-data="footerStore" />
