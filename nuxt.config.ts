@@ -54,7 +54,7 @@ export default defineNuxtConfig({
     },
   },
   components: true,
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate", "@nuxtjs/robots", "@nuxtjs/sitemap"],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate", "@nuxtjs/robots", "@nuxtjs/sitemap", "nuxt-schema-org"],
   robots: {
     enabled: true,
     metaTag: true,
