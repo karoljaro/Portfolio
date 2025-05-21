@@ -1,97 +1,58 @@
 <template>
-  <div
-    v-if="isPreloaderVisible"
-    ref="preloader"
-    class="bg-primary-bg fixed top-0 left-0 z-30 flex h-full w-full items-center justify-center overflow-hidden"
-  >
+  <Transition name="preloader-fade">
     <div
-      ref="preloaderTextContainer"
-      class="text-fourth invisible flex flex-row gap-5 overflow-hidden"
+      v-if="isPreloaderVisible"
+      ref="preloaderRef"
+      class="bg-primary-bg fixed top-0 left-0 z-30 flex h-full w-full items-center justify-center overflow-hidden"
     >
-      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-color">The future</h1>
-      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-color">is</h1>
-      <h1 :ref="(el) => h1Elements?.push(el)" class="text-4xl text-primary-color">yours</h1>
+      <div
+        ref="textContainerRef"
+        class="text-fourth flex flex-row gap-5 overflow-hidden"
+        :class="{ 'invisible': !animationStarted }"
+      >
+        <h1 
+          v-for="(word, index) in words" 
+          :key="index" 
+          :ref="(el) => elementRefs?.push(el)" 
+          class="text-4xl text-primary-color will-change-transform"
+        >
+          {{ word }}
+        </h1>
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <script lang="ts" setup>
-import type { ComponentPublicInstance } from "vue";
 import { useGeneralStore } from "~/stores/general";
 
-const { $gsap } = useNuxtApp();
+const { 
+  preloaderRef, 
+  textContainerRef, 
+  elementRefs,
+  animationStarted,
+  words
+} = usePreloader({
+  skipForReturningVisitors: true,
+  minDisplayTime: 1500
+});
+
 const store = useGeneralStore();
 const { isPreloaderVisible } = storeToRefs(store);
-
-const preloader = ref<HTMLDivElement | null>(null);
-const preloaderTextContainer = ref<HTMLDivElement | null>(null);
-const h1Elements = ref<(Element | ComponentPublicInstance | null)[]>([]);
-
-let ctx: gsap.Context;
-
-tryOnMounted(async () => {
-  await nextTick();
-
-  if (
-    isPreloaderVisible &&
-    preloader["value"] &&
-    preloaderTextContainer["value"] &&
-    h1Elements["value"]
-  ) {
-    ctx = $gsap.context(() => {
-      const tl = $gsap.timeline();
-
-      tl.to("body", {
-        overflow: "hidden",
-      });
-
-      tl.to(preloaderTextContainer["value"], {
-        duration: 0,
-        visibility: "visible",
-        ease: "Power3.easeOut",
-      });
-
-      tl.from(h1Elements["value"], {
-        duration: 1.5,
-        delay: 2,
-        y: 70,
-        skewY: 10,
-        stagger: 0.4,
-        ease: "Power3.easeOut",
-      });
-
-      tl.to(h1Elements["value"], {
-        duration: 1.2,
-        y: 70,
-        skewY: -20,
-        stagger: 0.2,
-        ease: "Power3.easeOut",
-      });
-
-      tl.to(preloader["value"], {
-        duration: 1.5,
-        height: "0vh",
-        ease: "Power3.easeOut",
-      });
-
-      tl.to(
-        "body",
-        {
-          overflow: "auto",
-        },
-        "-=2",
-      );
-
-      tl.to(preloader["value"], {
-        display: "none",
-        onComplete: () => {
-          ctx.kill();
-          ctx.revert();
-
-          store.updateIsPreloaderVisible(false);
-        },
-      });
-    });
-  }
-});
 </script>
+
+<style scoped>
+.preloader-fade-enter-active,
+.preloader-fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.preloader-fade-enter-from,
+.preloader-fade-leave-to {
+  opacity: 0;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+</style>

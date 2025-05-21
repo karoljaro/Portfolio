@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <OrganismThePreloader /> -->
+    <OrganismThePreloader />
     <main id="smooth-wrapper">
       <NuxtRouteAnnouncer />
       <NuxtLayout id="smooth-content" class="will-change-transform">
