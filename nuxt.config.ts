@@ -14,9 +14,9 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: "static_Lucide",
-        dir: "./assets/icons"
-      }
-    ]
+        dir: "./assets/icons",
+      },
+    ],
   },
   fonts: {
     families: [
@@ -41,15 +41,63 @@ export default defineNuxtConfig({
     head: {
       title: "Karol Jaroń | Full-Stack Web Developer",
       meta: [
-        { name: "description", content: "Portfolio Full-Stack Web Developera specjalizującego się w ekosystemie JavaScript (Vue.js, Nuxt, React, Node.js). REST API, DevOps, UI/UX. Sprawdź moje projekty i technologie."},
+        {
+          name: "description",
+          content:
+            "Portfolio Full-Stack Web Developera specjalizującego się w ekosystemie JavaScript (Vue.js, Nuxt, React, Node.js). REST API, DevOps, UI/UX. Sprawdź moje projekty i technologie.",
+        },
         { name: "author", content: "Karol Jaroń" },
       ],
       htmlAttrs: {
         lang: "en",
+      },
+    },
+  },
+  components: true,
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate", "@nuxtjs/robots", "@nuxtjs/sitemap"],
+  robots: {
+    enabled: true,
+    metaTag: true,
+    header: true,
+    allow: ["/"],
+    disallow: ["/assets/"],
+    sitemap: "/sitemap.xml",
+    blockAiBots: false,
+    groups: [
+      {
+        userAgent: ['Googlebot-Mobile', 'AdsBot-Google-Mobile'],
+        allow: ['/'],
+      },
+      {
+        userAgent: ['Googlebot-Image'],
+        allow: ['/'],
       }
-    }
-  },  components: true,
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate"],
+    ],
+    robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+    cacheControl: 'max-age=86400, must-revalidate',
+  },
+
+  sitemap: {
+    enabled: true,
+    autoLastmod: true,
+    defaults: {
+      changefreq: "monthly",
+      priority: 0.8,
+      lastmod: new Date().toISOString(),
+    },
+    urls: [
+      {
+        loc: "/",
+        lastmod: new Date().toISOString(),
+        changefreq: "monthly",
+        priority: 1,
+      }
+    ],
+    discoverImages: true,
+    discoverVideos: true,
+    cacheMaxAgeSeconds: 3600,
+  },
+
   devtools: { enabled: true },
   ssr: false,
   compatibilityDate: "2025-04-07",
