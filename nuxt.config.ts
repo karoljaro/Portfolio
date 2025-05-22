@@ -48,6 +48,12 @@ export default defineNuxtConfig({
         },
         { name: "author", content: "Karol Jaroń" },
       ],
+      link: [
+        {
+          rel: "canonical",
+          href: `${import.meta.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000/"}`,
+        },
+      ],
       htmlAttrs: {
         lang: "en",
       },
