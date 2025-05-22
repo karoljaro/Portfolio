@@ -31,6 +31,41 @@ onBeforeUnmount(() => {
   }
 });
 
+const { siteUrl } = useAppConfig();
+
+
+useSeoMeta({
+  ogTitle: "Karol Jaroń | Full-Stack Web Developer",
+  ogDescription: "Portfolio of Karol Jaroń, a Full-Stack Web Developer specializing in JavaScript ecosystem",
+  ogUrl: "https://karoljaron.com",
+  ogType: "website",
+  ogSiteName: "Karol Jaroń Portfolio",
+  ogLocale: "en_US",
+  ogImage: [
+    {
+      url: `${siteUrl}ogImages/standard/og-main.png`,
+      width: 1200,
+      height: 630,
+      alt: "Karol Jaroń - Full-Stack Web Developer",
+      type: "image/png",
+    },
+    {
+      url: `${siteUrl}ogImages/square/og-square.png`,
+      width: 630,
+      height: 630,
+      alt: "Karol Jaroń - Full-Stack Web Developer",
+      type: "image/png",
+    },
+  ],
+
+  // Twitter Card Meta Tags
+  twitterCard: "summary_large_image",
+  twitterTitle: "Karol Jaroń | Full-Stack Web Developer",
+  twitterDescription: "Portfolio of Karol Jaroń, a Full-Stack Web Developer specializing in JavaScript ecosystem",
+  twitterImage: `${siteUrl}ogImages/standard/og-main.png`,
+  twitterImageAlt: "Karol Jaroń - Full-Stack Web Developer",
+});
+
 useSchemaOrg({
   "@context": "https://schema.org",
   "@graph": [
@@ -39,7 +74,7 @@ useSchemaOrg({
       "@type": "Person",
       name: "Karol Jaroń",
       jobTitle: "Full-stack web developer",
-      url: "https://karoljaron.com",
+      url: `${siteUrl}`,
       description:
         "As a Fullstack Developer with over 4 years of experience, my passion is creating modern and efficient web applications using leading frameworks.",
       sameAs: ["https://github.com/karoljaro", "https://www.linkedin.com/in/karol-jaro%C5%84-474214361/"],
@@ -75,37 +110,6 @@ useSchemaOrg({
           addressCountry: "Poland",
         },
       },
-      mainEntityOfPage: {
-        "@id": "/#page",
-      },
-    },
-    {
-      "@id": "/#page",
-      "@type": "WebPage",
-      name: "Karol Jaroń Portfolio",
-      description: "Portfolio of Karol Jaroń, a Full-Stack Web Developer specializing in JavaScript ecosystem",
-      datePublished: "2025-05-21T00:00:00Z",
-      dateModified: "2025-05-21T00:00:00Z",
-      mainEntity: {
-        "@id": "#person",
-      },
-    },
-    {
-      "@id": "/#website",
-      "@type": "WebSite",
-      name: "Karol Jaroń Portfolio",
-      url: "https://karoljaron.com",
-      description: "Personal Portfolio Website of Karol Jaroń, Full-Stack Web Developer",
-      publisher: {
-        "@id": "#person",
-      },
-      inLanguage: "en",
-    },
-    {
-      "@id": "#projects",
-      "@type": "ItemList",
-      name: "Projects",
-      description: "Portfolio projects by Karol Jaroń",
     },
     // {
     //   "@id": "#breadcrumb",
