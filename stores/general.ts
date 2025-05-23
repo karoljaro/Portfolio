@@ -16,9 +16,8 @@ export const useGeneralStore = defineStore("generalStore", {
     setScrollSmoother(instance: typeof this.smScroll) {
       this.smScroll = instance;
     },
-  },
-  persist: {
+  },  persist: import.meta.client ? {
     storage: sessionStorage,
     pick: ['isPreloaderVisible']
-  }
+  } : false
 })
