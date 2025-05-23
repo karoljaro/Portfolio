@@ -57,6 +57,11 @@ export default defineNuxtConfig({
           rel: "canonical",
           href: `${import.meta.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000/"}`,
         },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       ],
       htmlAttrs: {
         lang: "en",
