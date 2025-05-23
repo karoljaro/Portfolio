@@ -17,6 +17,10 @@ export default defineNuxtConfig({
         dir: "./assets/icons",
       },
     ],
+    fetchTimeout: 5000,
+    clientBundle: {
+      includeCustomCollections: true,
+    },
   },
   fonts: {
     families: [
@@ -60,7 +64,17 @@ export default defineNuxtConfig({
     },
   },
   components: true,
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "@vueuse/nuxt", "@nuxt/icon", "@pinia/nuxt", "pinia-plugin-persistedstate", "@nuxtjs/robots", "@nuxtjs/sitemap", "nuxt-schema-org"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@vueuse/nuxt",
+    "@nuxt/icon",
+    "@pinia/nuxt",
+    "pinia-plugin-persistedstate",
+    "@nuxtjs/robots",
+    "@nuxtjs/sitemap",
+    "nuxt-schema-org",
+  ],
   robots: {
     enabled: true,
     metaTag: true,
@@ -71,16 +85,16 @@ export default defineNuxtConfig({
     blockAiBots: false,
     groups: [
       {
-        userAgent: ['Googlebot-Mobile', 'AdsBot-Google-Mobile'],
-        allow: ['/'],
+        userAgent: ["Googlebot-Mobile", "AdsBot-Google-Mobile"],
+        allow: ["/"],
       },
       {
-        userAgent: ['Googlebot-Image'],
-        allow: ['/'],
-      }
+        userAgent: ["Googlebot-Image"],
+        allow: ["/"],
+      },
     ],
-    robotsEnabledValue: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-    cacheControl: 'max-age=86400, must-revalidate',
+    robotsEnabledValue: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    cacheControl: "max-age=86400, must-revalidate",
   },
 
   sitemap: {
@@ -97,7 +111,7 @@ export default defineNuxtConfig({
         lastmod: new Date().toISOString(),
         changefreq: "monthly",
         priority: 1,
-      }
+      },
     ],
     discoverImages: true,
     discoverVideos: true,
