@@ -14,20 +14,74 @@
 const { $ScrollSmoother } = useNuxtApp();
 const { smScroll, setScrollSmoother } = useGeneralStore();
 
+const prefersReducedMotion = ref(false);
+
+const debounce = (fn: (...args: unknown[]) => void, delay: number) => {
+  let timer: number | null = null;
+  return (...args: unknown[]) => {
+    if (timer) clearTimeout(timer);
+    timer = window.setTimeout(() => {
+      fn(...args);
+      timer = null;
+    }, delay);
+  };
+};
+
+const resizeHandler = () => {
+  updateScrollSmoother();
+};
+
+const debouncedResizeHandler = debounce(resizeHandler, 200);
+
 tryOnMounted(() => {
+  if (typeof window !== 'undefined') {
+    prefersReducedMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
+      prefersReducedMotion.value = e.matches;
+      updateScrollSmoother();
+    });
+    
+    window.addEventListener('resize', debouncedResizeHandler);
+    
+    updateScrollSmoother();
+  }
+});
+
+const updateScrollSmoother = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  
+  if (prefersReducedMotion.value) {
+    if (smScroll) {
+      smScroll.kill();
+      setScrollSmoother(null);
+    }
+    return;
+  }
+  
+  const smoothValue = isMobile ? 0.8 : 1.2;
+  const smoothTouchValue = isMobile ? 0 : 0.1;
+  
   setScrollSmoother(
     $ScrollSmoother.create({
-      smooth: 1.2,
+      smooth: smoothValue,
       effects: true,
-      smoothTouch: 0.1,
+      smoothTouch: smoothTouchValue,
+      normalizeScroll: false,
+      ignoreMobileResize: true,
     }),
   );
-});
+};
 
 onBeforeUnmount(() => {
   if (smScroll) {
     smScroll.kill();
     setScrollSmoother(null);
+  }
+  
+  if (typeof window !== 'undefined') {
+    window.matchMedia('(prefers-reduced-motion: reduce)').removeEventListener('change', () => {});
+    window.removeEventListener('resize', debouncedResizeHandler);
   }
 });
 
